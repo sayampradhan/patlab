@@ -1,5 +1,3 @@
-# basic.py
-
 def square(n, char="*"):
     """
     Generate a square pattern of size `n` using the specified character.

@@ -6,3 +6,4 @@ Generate common patterns in Python easily.
 
 ```bash
 pip install patlab
+
