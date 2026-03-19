@@ -1,4 +1,4 @@
-# patternpy
+# pathlab
 
 Generate common patterns in Python easily.
 
