@@ -1,6 +1,6 @@
 from typing import Literal
 
-def classic(n: int, char: str = "*", hollow: bool = False) -> str:
+def classic(n: int, char: str = "*", hollow: bool = False, numeric: bool = False) -> str:
     """
     Generate a right-angled triangle of height `n`.
 
@@ -12,6 +12,8 @@ def classic(n: int, char: str = "*", hollow: bool = False) -> str:
         The character used to draw the triangle (default is '*').
     hollow : bool, optional
         If True, generate a hollow triangle (default is False).
+    numeric : bool, optional
+        If True, print numbers instead of characters (default is False).
 
     Returns
     -------
@@ -36,19 +38,46 @@ def classic(n: int, char: str = "*", hollow: bool = False) -> str:
     **
     * *
     ****
+
+    >>> print(classic(4, numeric=True))
+    1
+    12
+    123
+    1234
+
+    >>> print(classic(4, numeric=True, hollow=True))
+    1
+    12
+    1 3
+    1234
     """
     if n <= 0:
         raise ValueError("n must be positive")
     
-    if not hollow:
-        return "\n".join([char * i for i in range(1, n + 1)])
-    else:
-        return "\n".join([
-            char if i == 1 else
-            char * i if i == n else
-            char + ' ' * (i - 2) + char
-            for i in range(1, n + 1)
-        ])
+    lines = []
+    for i in range(1, n + 1):
+        if numeric:
+            if not hollow:
+                line = "".join(str(x) for x in range(1, i + 1))
+            else:
+                if i == 1:
+                    line = "1"
+                elif i == n:
+                    line = "".join(str(x) for x in range(1, n + 1))
+                else:
+                    line = "1" + " " * (i - 2) + str(i)
+        else:
+            if not hollow:
+                line = char * i
+            else:
+                if i == 1:
+                    line = char
+                elif i == n:
+                    line = char * n
+                else:
+                    line = char + " " * (i - 2) + char
+        lines.append(line)
+    return "\n".join(lines)
 
 
 def inverted(n: int, char: str = "*", hollow: bool = False) -> str:
