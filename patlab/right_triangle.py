@@ -87,8 +87,12 @@ def inverted(n: int, char: str = "*", hollow: bool = False) -> str:
     if not hollow:
         return "\n".join([char * i for i in range(n, 0, -1)])
     else:
-        # Optional: implement hollow inverted triangle
-        raise NotImplementedError("Hollow inverted triangle is not implemented yet.")
+        return "\n".join([
+            char if i == 1 else
+            char * i if i == n else
+            char + ' ' * (i - 2) + char
+            for i in range(n, 0, -1)
+        ])
 
 
 def make(n: int, variant: str = "classic", char: str = "*") -> str:
