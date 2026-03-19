@@ -1,0 +1,12 @@
+[project]
+name = "patlab"
+version = "0.1.0"
+description = "Simple pattern generation library for Python"
+authors = [{ name = "Sayam", email = "sayampradhan07@outlook.com" }]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
