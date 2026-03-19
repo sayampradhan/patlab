@@ -1,3 +1,5 @@
+from typing import Literal
+
 def classic(n: int, char: str = "*", hollow: bool = False) -> str:
     """
     Generate a right-angled triangle of height `n`.
@@ -95,7 +97,7 @@ def inverted(n: int, char: str = "*", hollow: bool = False) -> str:
         ])
 
 
-def make(n: int, variant: str = "classic", char: str = "*") -> str:
+def make(n: int, variant: Literal["classic","inverted"] = "classic", char: str = "*") -> str:
     """
     Factory function to create a right-angled triangle of a specified variant.
 
