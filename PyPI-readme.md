@@ -45,19 +45,17 @@ pip install patlab
 
 ## 🚀 Quick Start
 ```python
-from patlab.square import square
-from patlab.pyramid import centered
-from patlab.right_triangle import classic
+from patlab import *
 
 print(square(3))
-print(centered(4))
-print(classic(4))
+print(pyramid(4))
+print(right_triangle(4))
 ```
 
 ## 📐 Examples
 ### Square
 ```python
-from patlab.square import square
+from patlab import square
 
 print(square(4))
 print(square(4, "#"))
@@ -72,9 +70,9 @@ print(square(4, "#"))
 ### Pyramids
 #### Centered Pyramids
 ```python
-from patlab.pyramid import centered
+from patlab import pyramid
 
-print(centered(4))
+print(pyramid(4))
 ```
 ```
    *
@@ -85,7 +83,8 @@ print(centered(4))
 
 #### Hollow Pyramid
 ```python
-print(centered(4, hollow=True))
+from patlab import pyramid
+print(pyramid(4, hollow=True))
 ```
 ```
    *
@@ -96,9 +95,9 @@ print(centered(4, hollow=True))
 
 #### Left-Aligned Pyramid
 ```python
-from patlab.pyramid import left_aligned
+from patlab import pyramid
 
-print(left_aligned(4))
+print(pyramid(4, alignment="left"))
 ```
 ```
 *
@@ -109,9 +108,9 @@ print(left_aligned(4))
 
 #### Numeric Pyramid
 ```python
-from patlab.pyramid import numeric
+from patlab.pyramid import numeric_pyramid
 
-print(numeric(4))
+print(numeric_pyramid(4))
 ```
 ```
    1
