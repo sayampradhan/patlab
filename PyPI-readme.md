@@ -94,11 +94,11 @@ print(centered(4, hollow=True))
 *******
 ```
 
-#### Right-Aligned Pyramid
+#### Left-Aligned Pyramid
 ```python
-from patlab.pyramid import right_aligned
+from patlab.pyramid import left_aligned
 
-print(right_aligned(4))
+print(left_aligned(4))
 ```
 ```
 *
