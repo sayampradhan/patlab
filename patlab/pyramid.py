@@ -1,223 +1,81 @@
-"""
-pyramid.py
-
-Module for generating various pyramid shapes in text form.
-
-Available pyramid variants:
-- centered: A classic centered pyramid.
-- right: Right-aligned pyramid (staircase style).
-- numeric: Pyramid with ascending numbers.
-"""
-
-from typing import Literal
+from typing import Literal, Callable
 
 
-def centered(n: int, char: str = "*", hollow: bool = False) -> str:
+Alignment = Literal["center", "left", "right"]
+
+
+def pyramid(
+    n: int,
+    char: str = "*",
+    alignment: Alignment = "center",
+    inversion: bool = False,
+    hollow: bool = False,
+    numeric: bool = False,
+) -> str:
     """
-    Generate a centered pyramid of height `n`.
+    Generate a pyramid with configurable style.
 
     Parameters
     ----------
     n : int
-        The height of the pyramid. Must be a positive integer.
-    char : str, optional
-        The character used to build the pyramid (default is '*').
-    hollow : bool, optional
-        If True, generate a hollow pyramid (default is False).
+        Height of the pyramid (must be positive).
+    char : str
+        Character used for drawing (ignored if numeric=True).
+    alignment : {'center', 'left', 'right'}
+        Alignment of the pyramid.
+    inversion : bool
+        If True, pyramid is inverted.
+    hollow : bool
+        If True, pyramid is hollow.
+    numeric : bool
+        If True, uses numbers instead of characters.
 
     Returns
     -------
     str
-        A string representation of the centered pyramid.
-
-    Raises
-    ------
-    ValueError
-        If `n` is not positive.
-
-    Examples
-    --------
-    >>> print(centered(4))
-       *
-      ***
-     *****
-    *******
-
-    >>> print(centered(4, hollow=True))
-       *
-      * *
-     *   *
-    *******
+        The generated pyramid.
     """
     if n <= 0:
         raise ValueError("n must be positive")
-    
+
     lines = []
-    for i in range(1, n + 1):
-        spaces = " " * (n - i)
-        if not hollow:
-            stars = char * (2 * i - 1)
-            lines.append(spaces + stars)
+
+    levels = range(1, n + 1)
+    if inversion:
+        levels = reversed(levels)
+
+    for i in levels:
+        # --- CONTENT ---
+        if numeric:
+            content = "".join(str(x) for x in range(1, i + 1))
         else:
-            if i == 1:
-                line = spaces + char
-            elif i == n:
-                line = char * (2 * i - 1)
+            if not hollow:
+                if alignment == "center":
+                    content = char * (2 * i - 1)
+                else:
+                    content = char * i
             else:
-                line = spaces + char + " " * (2 * i - 3) + char
-            lines.append(line)
-    return "\n".join(lines)
+                if i == 1:
+                    content = char
+                elif i == n:
+                    content = char * (2 * i - 1) if alignment == "center" else char * i
+                else:
+                    if alignment == "center":
+                        content = char + " " * (2 * i - 3) + char
+                    else:
+                        content = char + " " * (i - 2) + char
 
-
-def left_aligned(n: int, char: str = "*", hollow: bool = False) -> str:
-    """
-    Generate a left-aligned pyramid (staircase style) of height `n`.
-
-    Parameters
-    ----------
-    n : int
-        The height of the pyramid. Must be positive.
-    char : str, optional
-        The character used to build the pyramid (default is '*').
-    hollow : bool, optional
-        If True, generate a hollow left-aligned pyramid (default is False).
-
-    Returns
-    -------
-    str
-        A string representation of the left-aligned pyramid.
-
-    Raises
-    ------
-    ValueError
-        If `n` is not positive.
-
-    Examples
-    --------
-    >>> print(left_aligned(4))
-    *
-    **
-    ***
-    ****
-
-    >>> print(left_aligned(4, hollow=True))
-    *
-    **
-    * *
-    ****
-    """
-    if n <= 0:
-        raise ValueError("n must be positive")
-    
-    lines = []
-    for i in range(1, n + 1):
-        if not hollow:
-            lines.append(char * i)
+        # --- ALIGNMENT ---
+        if alignment == "center":
+            width = 2 * n - 1
+            line = content.center(width)
+        elif alignment == "left":
+            line = content.ljust(n)
+        elif alignment == "right":
+            line = content.rjust(n)
         else:
-            if i == 1:
-                lines.append(char)
-            elif i == n:
-                lines.append(char * i)
-            else:
-                lines.append(char + " " * (i - 2) + char)
-    return "\n".join(lines)
+            raise ValueError("Invalid alignment")
 
-
-def numeric(n: int) -> str:
-    """
-    Generate a numeric pyramid of height `n`.
-
-    Each row displays numbers from 1 up to the row number.
-
-    Parameters
-    ----------
-    n : int
-        The height of the pyramid. Must be positive.
-
-    Returns
-    -------
-    str
-        A string representation of the numeric pyramid.
-
-    Raises
-    ------
-    ValueError
-        If `n` is not positive.
-
-    Examples
-    --------
-    >>> print(numeric(4))
-       1
-      12
-     123
-    1234
-    """
-    if n <= 0:
-        raise ValueError("n must be positive")
-    
-    lines = []
-    for i in range(1, n + 1):
-        line = " " * (n - i) + "".join(str(x) for x in range(1, i + 1))
         lines.append(line)
+
     return "\n".join(lines)
-
-
-def make(n: int, variant: Literal["centered", "left", "numeric"] = "centered", char: str = "*") -> str:
-    """
-    Factory function to generate a pyramid of a specified variant.
-
-    Parameters
-    ----------
-    n : int
-        The height of the pyramid. Must be positive.
-    variant : {'centered', 'left', 'numeric'}, optional
-        The pyramid style to generate (default is 'centered'):
-        - 'centered': classic centered pyramid.
-        - 'left': left-aligned (staircase) pyramid.
-        - 'numeric': pyramid of ascending numbers (ignores `char`).
-    char : str, optional
-        The character used for drawing the pyramid (default is '*').
-        Ignored if `variant='numeric'`.
-
-    Returns
-    -------
-    str
-        A string representation of the chosen pyramid variant.
-
-    Raises
-    ------
-    ValueError
-        If `variant` is not one of the supported options.
-
-    Examples
-    --------
-    >>> print(make(4, variant='centered'))
-       *
-      ***
-     *****
-    *******
-
-    >>> print(make(4, variant='left', char='#'))
-    #
-    ##
-    ###
-    ####
-
-    >>> print(make(4, variant='numeric'))
-       1
-      12
-     123
-    1234
-    """
-    variants = {
-        "centered": centered,
-        "left": left_aligned,
-        "numeric": numeric,
-    }
-
-    if variant not in variants:
-        raise ValueError(
-            f"Unknown pyramid variant: {variant}. Available: {list(variants.keys())}"
-        )
-
-    return variants[variant](n, char) if variant != "numeric" else variants[variant](n)

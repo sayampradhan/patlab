@@ -1,7 +1,12 @@
 from typing import Literal
 import inspect
 
-def classic(n: int, char: str = "*", hollow: bool = False, numeric: bool = False) -> str:
+def classic(
+        n: int, 
+        char: str = "*", 
+        hollow: bool = False, 
+        numeric: bool = False
+) -> str:
     """
     Generate a right-angled triangle of height `n`.
 
@@ -60,7 +65,12 @@ def classic(n: int, char: str = "*", hollow: bool = False, numeric: bool = False
     return "\n".join(lines)
 
 
-def inverted(n: int, char: str = "*", hollow: bool = False, numeric: bool = False) -> str:
+def inverted(
+        n: int, 
+        char: str = "*", 
+        hollow: bool = False, 
+        numeric: bool = False
+) -> str:
     """
     Generate an inverted right-angled triangle of height `n`.
 
