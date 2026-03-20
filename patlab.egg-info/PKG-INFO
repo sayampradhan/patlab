@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: patlab
-Version: 0.1.13
+Version: 0.1.14
 Summary: Simple pattern generation library for Python
 Author-email: Sayam <sayampradhan07@outlook.com>
 License-Expression: MIT
@@ -84,6 +84,11 @@ print(square(4, "#"))
 ****
 ****
 ****
+
+####
+####
+####
+####
 ```
 
 ### Pyramids
@@ -212,10 +217,8 @@ This project is licensed under the terms of the MIT License. See: https://github
 
 Contributions are welcome!
 
-If you’d like to improve Patlab:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
+If you’d like to improve Patlab, please visit the repository and submit a pull request:
+https://github.com/sayampradhan/patlab
 
 ## 💡 Inspiration
 
