@@ -1,151 +1,168 @@
 from typing import Literal
-import inspect
 
-def classic(
-        n: int, 
-        char: str = "*", 
-        hollow: bool = False, 
-        numeric: bool = False
+Alignment = Literal["left", "right"]
+Variant = Literal["classic", "inverted"]
+
+
+def right_triangle(
+    n: int,
+    char: str = "*",
+    alignment: Alignment = "left",
+    inversion: bool = False,
+    hollow: bool = False,
+    numeric: bool = False,
 ) -> str:
     """
-    Generate a right-angled triangle of height `n`.
+    Generate a right-angled triangle with configurable style.
+
+    This function creates a text-based right triangle of height `n`,
+    with options for alignment, inversion, hollow structure, and
+    numeric output.
 
     Parameters
     ----------
     n : int
-        The height of the triangle. Must be a positive integer.
+        Height of the triangle. Must be a positive integer.
     char : str, optional
-        The character used to draw the triangle (default is '*').
+        Character used to draw the triangle (default is '*').
+        Ignored if `numeric=True`.
+    alignment : {'left', 'right'}, optional
+        Alignment of the triangle:
+        - 'left'  : left-aligned triangle (default)
+        - 'right' : right-aligned triangle
+    inversion : bool, optional
+        If True, generates an inverted triangle (top-down).
+        Default is False.
     hollow : bool, optional
-        If True, generate a hollow triangle (default is False).
+        If True, generates a hollow triangle (only borders).
+        Default is False.
     numeric : bool, optional
-        If True, print numbers instead of characters (default is False).
+        If True, uses numbers instead of characters.
+        Each row increases sequentially (e.g., 1, 12, 123).
+        Default is False.
 
     Returns
     -------
     str
-        A string representation of the right-angled triangle.
+        A string representation of the generated triangle.
 
     Raises
     ------
     ValueError
-        If `n` is not positive or if `char` is passed while numeric=True.
+        If `n` is not positive.
+    ValueError
+        If `char` is specified while `numeric=True`.
+    ValueError
+        If `alignment` is invalid.
+
+    Examples
+    --------
+    >>> print(right_triangle(4))
+    *
+    **
+    ***
+    ****
+
+    >>> print(right_triangle(4, alignment="right"))
+       *
+      **
+     ***
+    ****
+
+    >>> print(right_triangle(4, inversion=True))
+    ****
+    ***
+    **
+    *
+
+    >>> print(right_triangle(4, numeric=True))
+    1
+    12
+    123
+    1234
     """
     if n <= 0:
         raise ValueError("n must be positive")
-    
-    # Disallow any explicit char when numeric=True
-    caller_args = inspect.currentframe().f_locals
-    if numeric and caller_args.get("char", "*") != "*":
+
+    if numeric and char != "*":
         raise ValueError("Cannot specify 'char' when numeric=True")
-    
+
     lines = []
-    for i in range(1, n + 1):
+
+    levels = range(1, n + 1)
+    if inversion:
+        levels = reversed(list(levels))
+
+    for i in levels:
         if numeric:
             if not hollow:
-                line = "".join(str(x) for x in range(1, i + 1))
+                content = "".join(str(x) for x in range(1, i + 1))
             else:
                 if i == 1:
-                    line = "1"
+                    content = "1"
                 elif i == n:
-                    line = "".join(str(x) for x in range(1, n + 1))
+                    content = "".join(str(x) for x in range(1, n + 1))
                 else:
-                    line = "1" + " " * (i - 2) + str(i)
+                    content = "1" + " " * (i - 2) + str(i)
         else:
             if not hollow:
-                line = char * i
+                content = char * i
             else:
                 if i == 1:
-                    line = char
+                    content = char
                 elif i == n:
-                    line = char * n
+                    content = char * n
                 else:
-                    line = char + " " * (i - 2) + char
+                    content = char + " " * (i - 2) + char
+
+        if alignment == "left":
+            line = content.ljust(n)
+        elif alignment == "right":
+            line = content.rjust(n)
+        else:
+            raise ValueError("Invalid alignment")
+
         lines.append(line)
+
     return "\n".join(lines)
 
 
-def inverted(
-        n: int, 
-        char: str = "*", 
-        hollow: bool = False, 
-        numeric: bool = False
+def make(
+    n: int,
+    variant: Variant = "classic",
+    char: str = "*",
+    alignment: Alignment = "left",
+    hollow: bool = False,
+    numeric: bool = False,
 ) -> str:
     """
-    Generate an inverted right-angled triangle of height `n`.
+    Create a right-angled triangle of a specified variant.
+
+    This is a convenience factory function that wraps `right_triangle`
+    and selects the appropriate configuration based on the chosen variant.
 
     Parameters
     ----------
     n : int
-        The height of the triangle. Must be a positive integer.
+        Height of the triangle. Must be a positive integer.
+    variant : {'classic', 'inverted'}, optional
+        Type of triangle to generate:
+        - 'classic'  : standard right-angled triangle (default)
+        - 'inverted' : upside-down triangle
     char : str, optional
-        The character used to draw the triangle (default is '*').
+        Character used to draw the triangle (default is '*').
+        Ignored if `numeric=True`.
+    alignment : {'left', 'right'}, optional
+        Alignment of the triangle (default is 'left').
     hollow : bool, optional
-        If True, generate a hollow triangle (default is False).
+        If True, generates a hollow triangle (default is False).
+    numeric : bool, optional
+        If True, generates a numeric triangle (default is False).
 
     Returns
     -------
     str
-        A string representation of the inverted right-angled triangle.
-
-    Raises
-    ------
-    ValueError
-        If `n` is not positive or if `char` is passed while numeric=True.
-    """
-    if n <= 0:
-        raise ValueError("n must be positive")
-    
-    # Disallow any explicit char when numeric=True
-    caller_args = inspect.currentframe().f_locals
-    if numeric and caller_args.get("char", "*") != "*":
-        raise ValueError("Cannot specify 'char' when numeric=True")
-    
-    lines = []
-    for i in range(n, 0, -1):
-        if numeric:
-            if not hollow:
-                line = "".join(str(x) for x in range(1, i + 1))
-            else:
-                if i == 1:
-                    line = "1"
-                elif i == n:
-                    line = "".join(str(x) for x in range(1, n + 1))
-                else:
-                    line = "1" + " " * (i - 2) + str(i)
-        else:
-            if not hollow:
-                line = char * i
-            else:
-                if i == 1:
-                    line = char
-                elif i == n:
-                    line = char * n
-                else:
-                    line = char + " " * (i - 2) + char
-        lines.append(line)
-    return "\n".join(lines)
-
-
-def make(n: int, variant: Literal["classic","inverted"] = "classic", char: str = "*") -> str:
-    """
-    Factory function to create a right-angled triangle of a specified variant.
-
-    Parameters
-    ----------
-    n : int
-        The height of the triangle. Must be positive.
-    variant : str, optional
-        The triangle variant. Options are:
-        - "classic": normal right-angled triangle (default)
-        - "inverted": inverted right-angled triangle
-    char : str, optional
-        The character used to draw the triangle (default is '*').
-
-    Returns
-    -------
-    str
-        A string representation of the chosen triangle variant.
+        A string representation of the selected triangle variant.
 
     Raises
     ------
@@ -165,15 +182,27 @@ def make(n: int, variant: Literal["classic","inverted"] = "classic", char: str =
     ***
     **
     *
-    """
-    variants = {
-        "classic": classic,
-        "inverted": inverted
-    }
 
-    if variant not in variants:
+    >>> print(make(4, alignment="right"))
+       *
+      **
+     ***
+    ****
+    """
+    if variant == "classic":
+        inversion = False
+    elif variant == "inverted":
+        inversion = True
+    else:
         raise ValueError(
-            f"Unknown right-triangle variant: {variant}. Available: {list(variants.keys())}"
+            f"Unknown variant: {variant}. Available: ['classic', 'inverted']"
         )
 
-    return variants[variant](n, char)
+    return right_triangle(
+        n=n,
+        char=char,
+        alignment=alignment,
+        inversion=inversion,
+        hollow=hollow,
+        numeric=numeric,
+    )
