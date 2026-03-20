@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: patlab
-Version: 0.1.8
+Version: 0.1.10
 Summary: Simple pattern generation library for Python
 Author-email: Sayam <sayampradhan07@outlook.com>
 License-Expression: MIT
@@ -132,9 +132,9 @@ from patlab.pyramid import numeric_pyramid
 print(numeric_pyramid(4))
 ```
 ```
-   1
-  12
- 123
+1
+12
+123
 1234
 ```
 
@@ -150,7 +150,7 @@ print(make(4, variant="numeric"))
 ### Right-Angled Triangles
 #### Classic Triangle
 ```python
-from patlab.right_triangle import classic
+from patlab import classic
 
 print(classic(4))
 ```
