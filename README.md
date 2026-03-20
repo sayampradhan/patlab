@@ -38,7 +38,7 @@ pip install patlab
 
 ## 🚀 Quick Start
 ```python
-from patlab.basic import square
+from patlab.square import square
 from patlab.pyramid import centered
 from patlab.right_triangle import classic
 
@@ -50,7 +50,7 @@ print(classic(4))
 ## 📐 Usage Examples
 ### Square
 ```python
-from patlab.basic import square
+from patlab.square import square
 
 print(square(4))
 print(square(4, "#"))
