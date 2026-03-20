@@ -34,8 +34,9 @@ Install via pip:
 
 ```bash
 pip install patlab
+```
 
-## Quick Start
+## 🚀 Quick Start
 ```python
 from patlab.basic import square
 from patlab.pyramid import centered
@@ -46,7 +47,7 @@ print(centered(4))
 print(classic(4))
 ```
 
-## Usage Examples
+## 📐 Usage Examples
 ### Square
 ```python
 from patlab.basic import square
@@ -178,7 +179,7 @@ print(make(4, variant="classic"))
 print(make(4, variant="inverted"))
 ```
 
-## Testing
+## 🧪 Testing
 Tests are included using `pytest`.
 
 Run tests locally:
@@ -186,7 +187,7 @@ Run tests locally:
 pytest
 ```
 
-## License
+## 📜 License
 This project is licensed under the terms of the MIT License.
 
 ## 🤝 Contributing
@@ -198,7 +199,7 @@ If you’d like to improve Patlab:
 2. Create a feature branch
 3. Submit a pull request
 
-## Inspiration
+## 💡 Inspiration
 
 Patlab is inspired by classic programming exercises used to teach loops, logic, and formatting in Python.
 
