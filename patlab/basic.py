@@ -1,4 +1,6 @@
-def square(n, char="*"):
+from typing import Literal
+
+def square(n: int, char: str="*") -> str:
     """
     Generate a square pattern of size `n` using the specified character.
 
