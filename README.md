@@ -189,6 +189,15 @@ pytest
 ## License
 This project is licensed under the terms of the MIT License.
 
+## 🤝 Contributing
+
+Contributions are welcome!
+
+If you’d like to improve Patlab:
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
 ## Inspiration
 
 Patlab is inspired by classic programming exercises used to teach loops, logic, and formatting in Python.
