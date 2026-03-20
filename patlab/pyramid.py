@@ -69,9 +69,9 @@ def centered(n: int, char: str = "*", hollow: bool = False) -> str:
     return "\n".join(lines)
 
 
-def right_aligned(n: int, char: str = "*", hollow: bool = False) -> str:
+def left_aligned(n: int, char: str = "*", hollow: bool = False) -> str:
     """
-    Generate a right-aligned pyramid (staircase style) of height `n`.
+    Generate a left-aligned pyramid (staircase style) of height `n`.
 
     Parameters
     ----------
@@ -80,12 +80,12 @@ def right_aligned(n: int, char: str = "*", hollow: bool = False) -> str:
     char : str, optional
         The character used to build the pyramid (default is '*').
     hollow : bool, optional
-        If True, generate a hollow right-aligned pyramid (default is False).
+        If True, generate a hollow left-aligned pyramid (default is False).
 
     Returns
     -------
     str
-        A string representation of the right-aligned pyramid.
+        A string representation of the left-aligned pyramid.
 
     Raises
     ------
@@ -94,13 +94,13 @@ def right_aligned(n: int, char: str = "*", hollow: bool = False) -> str:
 
     Examples
     --------
-    >>> print(right_aligned(4))
+    >>> print(left_aligned(4))
     *
     **
     ***
     ****
 
-    >>> print(right_aligned(4, hollow=True))
+    >>> print(left_aligned(4, hollow=True))
     *
     **
     * *
@@ -162,7 +162,7 @@ def numeric(n: int) -> str:
     return "\n".join(lines)
 
 
-def make(n: int, variant: Literal["centered", "right", "numeric"] = "centered", char: str = "*") -> str:
+def make(n: int, variant: Literal["centered", "left", "numeric"] = "centered", char: str = "*") -> str:
     """
     Factory function to generate a pyramid of a specified variant.
 
@@ -170,10 +170,10 @@ def make(n: int, variant: Literal["centered", "right", "numeric"] = "centered", 
     ----------
     n : int
         The height of the pyramid. Must be positive.
-    variant : {'centered', 'right', 'numeric'}, optional
+    variant : {'centered', 'left', 'numeric'}, optional
         The pyramid style to generate (default is 'centered'):
         - 'centered': classic centered pyramid.
-        - 'right': right-aligned (staircase) pyramid.
+        - 'left': left-aligned (staircase) pyramid.
         - 'numeric': pyramid of ascending numbers (ignores `char`).
     char : str, optional
         The character used for drawing the pyramid (default is '*').
@@ -197,7 +197,7 @@ def make(n: int, variant: Literal["centered", "right", "numeric"] = "centered", 
      *****
     *******
 
-    >>> print(make(4, variant='right', char='#'))
+    >>> print(make(4, variant='left', char='#'))
     #
     ##
     ###
@@ -211,7 +211,7 @@ def make(n: int, variant: Literal["centered", "right", "numeric"] = "centered", 
     """
     variants = {
         "centered": centered,
-        "right": right_aligned,
+        "left": left_aligned,
         "numeric": numeric,
     }
 
