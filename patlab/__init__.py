@@ -1,5 +1,6 @@
 from .square import square
-from .pyramid import make as pyramid
+from .pyramid import pyramid
+from .pyramid import numeric_pyramid
 from .right_triangle import right_triangle
 
-__all__ = ["square", "right_triangle", "pyramid"]
+__all__ = ["square", "right_triangle", "pyramid", "numeric_pyramid"]
