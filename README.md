@@ -10,8 +10,6 @@
 
 It’s designed for beginners, educators, and developers who want a simple way to generate patterns programmatically.
 
----
-
 ## ✨ Features
 
 - Generate common patterns easily:
@@ -24,8 +22,6 @@ It’s designed for beginners, educators, and developers who want a simple way t
   - Numeric patterns
 - Clean, readable API design
 - Minimal dependencies
-
----
 
 ## 📦 Installation
 
@@ -188,7 +184,6 @@ pytest
 This project is licensed under the terms of the MIT License.
 
 ## Inspiration
-## 💡 Inspiration
 
 Patlab is inspired by classic programming exercises used to teach loops, logic, and formatting in Python.
 
@@ -202,18 +197,4 @@ Patlab builds on those foundational exercises by:
 - Helping beginners transition from practice problems to structured code  
 
 It aims to bridge the gap between **learning concepts** and **building reusable tools**, making pattern generation both educational and practical.
-
----
-
-## 🏷️ Additional Badges
-
-You can enhance your README further with these optional badges:
-
-[![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Linting: Ruff](https://img.shields.io/badge/linting-ruff-blueviolet.svg)](https://github.com/astral-sh/ruff)
-[![Coverage](https://img.shields.io/codecov/c/github/sayampradhan/patlab)](https://codecov.io/gh/sayampradhan/patlab)
-[![Issues](https://img.shields.io/github/issues/sayampradhan/patlab)](https://github.com/your-username/patlab/issues)
-[![Stars](https://img.shields.io/github/stars/sayampradhan/patlab)](https://github.com/your-username/patlab/stargazers)
-
----
 
