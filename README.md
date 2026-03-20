@@ -1,7 +1,7 @@
 # ![patlab-logo](docs/images/patlab-logo.png)
 
 [![PyPI version](https://img.shields.io/pypi/v/patlab.svg)](https://pypi.org/project/patlab/)
-[![Python versions](https://img.shields.io/pypi/pyversions/patlab.svg)](https://pypi.org/project/patlab/)
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 [![License](https://img.shields.io/github/license/sayampradhan/patlab.svg)](LICENSE)
 <!-- [![Build Status](https://img.shields.io/github/actions/workflow/status/your-username/patlab/ci.yml?branch=main)](https://github.com/your-username/patlab/actions) -->
 [![Downloads](https://img.shields.io/pypi/dm/patlab.svg)](https://pypi.org/project/patlab/)
