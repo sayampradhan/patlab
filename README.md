@@ -6,9 +6,9 @@
 [![Downloads](https://img.shields.io/pypi/dm/patlab.svg)](https://pypi.org/project/patlab/)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Linting: Ruff](https://img.shields.io/badge/linting-ruff-blueviolet.svg)](https://github.com/astral-sh/ruff)
-[![Coverage](https://img.shields.io/codecov/c/github/sayampradhan/patlab)](https://codecov.io/gh/sayampradhan/patlab)
 [![Issues](https://img.shields.io/github/issues/sayampradhan/patlab)](https://github.com/sayampradhan/patlab/issues)
 [![Stars](https://img.shields.io/github/stars/sayampradhan/patlab)](https://github.com/sayampradhan/patlab/stargazers)
+<!-- [![Coverage](https://img.shields.io/codecov/c/github/sayampradhan/patlab)](https://codecov.io/gh/sayampradhan/patlab) -->
 <!-- [![Build Status](https://img.shields.io/github/actions/workflow/status/your-username/patlab/ci.yml?branch=main)](https://github.com/your-username/patlab/actions) -->
 
 **Patlab** is a lightweight Python library for generating common text-based patterns such as squares, pyramids, and triangles with clean and customizable APIs.
