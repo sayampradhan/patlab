@@ -1,7 +1,7 @@
 from typing import Literal
 
 Alignment = Literal["center", "left", "right"]
-
+Variant = Literal["centered", "left", "right", "inverted", "numeric"]
 
 def pyramid(
     n: int,
@@ -106,4 +106,80 @@ def numeric_pyramid(
         inversion=inversion,
         hollow=hollow,
         numeric=True,
+    )
+
+def make(
+    n: int,
+    variant: Variant = "centered",
+    char: str = "*",
+    alignment: Alignment | None = None,
+    hollow: bool = False,
+) -> str:
+    """
+    Create a pyramid of a specified variant.
+
+    This is a convenience factory function that wraps `pyramid()` and
+    `numeric_pyramid()` to simplify common use cases by automatically
+    selecting the appropriate configuration.
+
+    Parameters
+    ----------
+    n : int
+        Height of the pyramid. Must be a positive integer.
+    variant : {'centered', 'left', 'right', 'inverted', 'numeric'}, optional
+        Type of pyramid to generate:
+        - 'centered' : standard centered pyramid (default)
+        - 'left'     : left-aligned pyramid
+        - 'right'    : right-aligned pyramid
+        - 'inverted' : inverted centered pyramid
+        - 'numeric'  : numeric pyramid
+    char : str, optional
+        Character used for drawing the pyramid (default is '*').
+        Ignored when `variant='numeric'`.
+    alignment : {'center', 'left', 'right'}, optional
+        Overrides the default alignment for the selected variant.
+        If not provided, a sensible default is used.
+    hollow : bool, optional
+        If True, generates a hollow pyramid (default is False).
+
+    Returns
+    -------
+    str
+        A string representation of the generated pyramid.
+
+    Raises
+    ------
+    ValueError
+        If an unknown `variant` is provided.
+    """
+    valid_variants = {"centered", "left", "right", "inverted", "numeric"}
+    if variant not in valid_variants:
+        raise ValueError(
+            f"Unknown pyramid variant: {variant}. Available: {list(valid_variants)}"
+        )
+
+    # Default alignment per variant
+    default_alignment = {
+        "centered": "center",
+        "left": "left",
+        "right": "right",
+        "inverted": "center",
+        "numeric": "center",
+    }
+
+    final_alignment = alignment if alignment is not None else default_alignment[variant]
+
+    if variant == "numeric":
+        return numeric_pyramid(
+            n,
+            alignment=final_alignment,
+            hollow=hollow,
+        )
+
+    return pyramid(
+        n=n,
+        char=char,
+        alignment=final_alignment,
+        inversion=(variant == "inverted"),
+        hollow=hollow,
     )
