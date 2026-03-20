@@ -55,10 +55,10 @@ print(right_triangle(4))
 ## 📐 Examples
 ### Square
 ```python
-from patlab import square
+from patlab import square as sq
 
-print(square(4))
-print(square(4, "#"))
+print(sq(4))
+print(sq(4, "#"))
 ```
 ```
 ****
@@ -75,9 +75,9 @@ print(square(4, "#"))
 ### Pyramids
 #### Centered Pyramids
 ```python
-from patlab import pyramid
+from patlab import pyramid as py
 
-print(pyramid(4))
+print(py(4))
 ```
 ```
    *
@@ -88,8 +88,9 @@ print(pyramid(4))
 
 #### Hollow Pyramid
 ```python
-from patlab import pyramid
-print(pyramid(4, hollow=True))
+from patlab import pyramid as py
+
+print(py(4, hollow=True))
 ```
 ```
    *
@@ -100,9 +101,9 @@ print(pyramid(4, hollow=True))
 
 #### Left-Aligned Pyramid
 ```python
-from patlab import pyramid
+from patlab import pyramid as py
 
-print(pyramid(4, alignment="left"))
+print(py(4, alignment="left"))
 ```
 ```
 *
@@ -113,9 +114,9 @@ print(pyramid(4, alignment="left"))
 
 #### Numeric Pyramid
 ```python
-from patlab.pyramid import numeric_pyramid
+from patlab.pyramid import numeric_pyramid as npy
 
-print(numeric_pyramid(4))
+print(npy(4))
 ```
 ```
 1
@@ -124,21 +125,12 @@ print(numeric_pyramid(4))
 1234
 ```
 
-#### Factory Method
-```python
-from patlab.pyramid import make
-
-print(make(4, variant="centered"))
-print(make(4, variant="right", char="#"))
-print(make(4, variant="numeric"))
-```
-
 ### Right-Angled Triangles
 #### Classic Triangle
 ```python
-from patlab import classic
+from patlab import right_triangle as rt
 
-print(classic(4))
+print(rt(4))
 ```
 ```
 *
@@ -149,7 +141,9 @@ print(classic(4))
 
 #### Hollow Triangle
 ```python
-print(classic(4, hollow=True))
+from patlab import right_triangle as rt
+
+print(rt(4, hollow=True))
 ```
 ```
 *
@@ -160,7 +154,9 @@ print(classic(4, hollow=True))
 
 #### Numeric Triangle
 ```python
-print(classic(4, numeric=True))
+from patlab import right_triangle as rt
+
+print(rt(4, numeric=True))
 ```
 ```
 1
@@ -171,23 +167,15 @@ print(classic(4, numeric=True))
 
 #### Inverted Triangle
 ```python
-from patlab.right_triangle import inverted
+from patlab import right_triangle as rt
 
-print(inverted(4))
+print(rt(4, inverted=True))
 ```
 ```
 ****
 ***
 **
 *
-```
-
-#### Triangle Factory
-```python
-from patlab.right_triangle import make
-
-print(make(4, variant="classic"))
-print(make(4, variant="inverted"))
 ```
 
 
