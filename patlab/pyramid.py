@@ -1,5 +1,4 @@
-from typing import Literal, Callable
-
+from typing import Literal
 
 Alignment = Literal["center", "left", "right"]
 
@@ -42,12 +41,21 @@ def pyramid(
 
     levels = range(1, n + 1)
     if inversion:
-        levels = reversed(levels)
+        levels = reversed(list(levels))
 
     for i in levels:
         # --- CONTENT ---
         if numeric:
-            content = "".join(str(x) for x in range(1, i + 1))
+            # Build numeric pattern
+            left = "".join(str(x) for x in range(1, i + 1))
+
+            if alignment == "center":
+                # Palindromic pyramid: 12321
+                content = left + left[-2::-1]
+            else:
+                # Simple numeric: 123
+                content = left
+
         else:
             if not hollow:
                 if alignment == "center":
@@ -70,12 +78,32 @@ def pyramid(
             width = 2 * n - 1
             line = content.center(width)
         elif alignment == "left":
-            line = content.ljust(n)
+            width = 2 * n - 1 if numeric else n
+            line = content.ljust(width)
         elif alignment == "right":
-            line = content.rjust(n)
+            width = 2 * n - 1 if numeric else n
+            line = content.rjust(width)
         else:
             raise ValueError("Invalid alignment")
 
         lines.append(line)
 
     return "\n".join(lines)
+
+
+def numeric_pyramid(
+    n: int,
+    alignment: Alignment = "center",
+    inversion: bool = False,
+    hollow: bool = False,
+) -> str:
+    """
+    Convenience wrapper for numeric pyramids.
+    """
+    return pyramid(
+        n=n,
+        alignment=alignment,
+        inversion=inversion,
+        hollow=hollow,
+        numeric=True,
+    )
