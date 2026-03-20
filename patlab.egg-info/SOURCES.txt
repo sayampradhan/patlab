@@ -3,11 +3,12 @@ PyPI-readme.md
 README.md
 pyproject.toml
 patlab/__init__.py
-patlab/basic.py
 patlab/pyramid.py
 patlab/right_triangle.py
+patlab/square.py
 patlab.egg-info/PKG-INFO
 patlab.egg-info/SOURCES.txt
 patlab.egg-info/dependency_links.txt
 patlab.egg-info/top_level.txt
 tests/test_basic.py
+tests/test_pyramid.py
