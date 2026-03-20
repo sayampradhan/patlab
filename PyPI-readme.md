@@ -188,7 +188,7 @@ print(make(4, variant="inverted"))
 
 
 ## 📜 License
-This project is licensed under the terms of the MIT License.See: https://github.com/sayampradhan/patlab/blob/main/LICENSE
+This project is licensed under the terms of the MIT License. See: https://github.com/sayampradhan/patlab/blob/main/LICENSE
 
 ## 🤝 Contributing
 
