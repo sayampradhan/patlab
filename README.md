@@ -3,13 +3,13 @@
 [![PyPI version](https://img.shields.io/pypi/v/patlab.svg)](https://pypi.org/project/patlab/)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 [![License](https://img.shields.io/github/license/sayampradhan/patlab.svg)](LICENSE)
-<!-- [![Build Status](https://img.shields.io/github/actions/workflow/status/your-username/patlab/ci.yml?branch=main)](https://github.com/your-username/patlab/actions) -->
 [![Downloads](https://img.shields.io/pypi/dm/patlab.svg)](https://pypi.org/project/patlab/)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Linting: Ruff](https://img.shields.io/badge/linting-ruff-blueviolet.svg)](https://github.com/astral-sh/ruff)
 [![Coverage](https://img.shields.io/codecov/c/github/your-username/patlab)](https://codecov.io/gh/your-username/patlab)
 [![Issues](https://img.shields.io/github/issues/your-username/patlab)](https://github.com/your-username/patlab/issues)
 [![Stars](https://img.shields.io/github/stars/your-username/patlab)](https://github.com/your-username/patlab/stargazers)
+<!-- [![Build Status](https://img.shields.io/github/actions/workflow/status/your-username/patlab/ci.yml?branch=main)](https://github.com/your-username/patlab/actions) -->
 
 **Patlab** is a lightweight Python library for generating common text-based patterns such as squares, pyramids, and triangles with clean and customizable APIs.
 
