@@ -9,5 +9,4 @@ patlab.egg-info/PKG-INFO
 patlab.egg-info/SOURCES.txt
 patlab.egg-info/dependency_links.txt
 patlab.egg-info/top_level.txt
-tests/test.py
 tests/test_basic.py
