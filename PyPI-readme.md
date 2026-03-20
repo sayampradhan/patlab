@@ -65,6 +65,11 @@ print(square(4, "#"))
 ****
 ****
 ****
+
+####
+####
+####
+####
 ```
 
 ### Pyramids
@@ -193,10 +198,8 @@ This project is licensed under the terms of the MIT License. See: https://github
 
 Contributions are welcome!
 
-If you’d like to improve Patlab:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
+If you’d like to improve Patlab, please visit the repository and submit a pull request:
+https://github.com/sayampradhan/patlab
 
 ## 💡 Inspiration
 

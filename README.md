@@ -47,138 +47,6 @@ print(centered(4))
 print(classic(4))
 ```
 
-## 📐 Usage Examples
-### Square
-```python
-from patlab.square import square
-
-print(square(4))
-print(square(4, "#"))
-```
-```
-****
-****
-****
-****
-```
-
-### Pyramids
-#### Centered Pyramids
-```python
-from patlab.pyramid import centered
-
-print(centered(4))
-```
-```
-   *
-  ***
- *****
-*******
-```
-
-#### Hollow Pyramid
-```python
-print(centered(4, hollow=True))
-```
-```
-   *
-  * *
- *   *
-*******
-```
-
-#### Left-Aligned Pyramid
-```python
-from patlab.pyramid import left_aligned
-
-print(left_aligned(4))
-```
-```
-*
-**
-***
-****
-```
-
-#### Numeric Pyramid
-```python
-from patlab.pyramid import numeric
-
-print(numeric(4))
-```
-```
-   1
-  12
- 123
-1234
-```
-
-#### Factory Method
-```python
-from patlab.pyramid import make
-
-print(make(4, variant="centered"))
-print(make(4, variant="right", char="#"))
-print(make(4, variant="numeric"))
-```
-
-### Right-Angled Triangles
-#### Classic Triangle
-```python
-from patlab.right_triangle import classic
-
-print(classic(4))
-```
-```
-*
-**
-***
-****
-```
-
-#### Hollow Triangle
-```python
-print(classic(4, hollow=True))
-```
-```
-*
-**
-* *
-****
-```
-
-#### Numeric Triangle
-```python
-print(classic(4, numeric=True))
-```
-```
-1
-12
-123
-1234
-```
-
-#### Inverted Triangle
-```python
-from patlab.right_triangle import inverted
-
-print(inverted(4))
-```
-```
-****
-***
-**
-*
-```
-
-#### Triangle Factory
-```python
-from patlab.right_triangle import make
-
-print(make(4, variant="classic"))
-print(make(4, variant="inverted"))
-```
-
 ## 🧪 Testing
 Tests are included using `pytest`.
 
@@ -194,7 +62,7 @@ This project is licensed under the terms of the MIT License.
 
 Contributions are welcome!
 
-If you’d like to improve Patlab:
+If you’d like to improve patlab:
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
