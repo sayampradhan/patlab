@@ -1,4 +1,5 @@
 LICENSE
+PyPI-readme.md
 README.md
 pyproject.toml
 patlab/__init__.py

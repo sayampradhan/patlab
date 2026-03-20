@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: patlab
-Version: 0.1.2
+Version: 0.1.3
 Summary: Simple pattern generation library for Python
 Author-email: Sayam <sayampradhan07@outlook.com>
 License-Expression: MIT
@@ -17,8 +17,10 @@ Description-Content-Type: text/markdown
 License-File: LICENSE
 Dynamic: license-file
 
-# ![patlab-logo](docs/images/patlab-logo.png)
+# patlab
 
+# ![patlab-logo](https://raw.githubusercontent.com/sayampradhan/patlab/main/docs/images/patlab-logo.png)
+<!-- 
 [![PyPI version](https://img.shields.io/pypi/v/patlab.svg)](https://pypi.org/project/patlab/)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 [![License](https://img.shields.io/github/license/sayampradhan/patlab.svg)](LICENSE)
@@ -26,13 +28,18 @@ Dynamic: license-file
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Linting: Ruff](https://img.shields.io/badge/linting-ruff-blueviolet.svg)](https://github.com/astral-sh/ruff)
 [![Issues](https://img.shields.io/github/issues/sayampradhan/patlab)](https://github.com/sayampradhan/patlab/issues)
-[![Stars](https://img.shields.io/github/stars/sayampradhan/patlab)](https://github.com/sayampradhan/patlab/stargazers)
+[![Stars](https://img.shields.io/github/stars/sayampradhan/patlab)](https://github.com/sayampradhan/patlab/stargazers) -->
 <!-- [![Coverage](https://img.shields.io/codecov/c/github/sayampradhan/patlab)](https://codecov.io/gh/sayampradhan/patlab) -->
 <!-- [![Build Status](https://img.shields.io/github/actions/workflow/status/your-username/patlab/ci.yml?branch=main)](https://github.com/your-username/patlab/actions) -->
 
 **Patlab** is a lightweight Python library for generating common text-based patterns such as squares, pyramids, and triangles with clean and customizable APIs.
 
 It’s designed for beginners, educators, and developers who want a simple way to generate patterns programmatically.
+
+🔗 **GitHub Repository:** https://github.com/sayampradhan/patlab  
+📚 **Documentation:** https://github.com/sayampradhan/patlab/tree/main/docs  
+
+---
 
 ## ✨ Features
 
@@ -66,7 +73,7 @@ print(centered(4))
 print(classic(4))
 ```
 
-## 📐 Usage Examples
+## 📐 Examples
 ### Square
 ```python
 from patlab.basic import square
@@ -198,16 +205,9 @@ print(make(4, variant="classic"))
 print(make(4, variant="inverted"))
 ```
 
-## 🧪 Testing
-Tests are included using `pytest`.
-
-Run tests locally:
-```
-pytest
-```
 
 ## 📜 License
-This project is licensed under the terms of the MIT License.
+This project is licensed under the terms of the MIT License.See: https://github.com/sayampradhan/patlab/blob/main/LICENSE
 
 ## 🤝 Contributing
 
