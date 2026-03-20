@@ -81,6 +81,8 @@ def right_triangle(
     123
     1234
     """
+    if alignment not in {"left", "right"}:
+        raise ValueError(f"Invalid alignment: {alignment}. Must be 'left' or 'right'.")
     if n <= 0:
         raise ValueError("n must be positive")
 
