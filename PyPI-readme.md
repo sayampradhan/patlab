@@ -113,9 +113,9 @@ from patlab.pyramid import numeric_pyramid
 print(numeric_pyramid(4))
 ```
 ```
-   1
-  12
- 123
+1
+12
+123
 1234
 ```
 
@@ -131,7 +131,7 @@ print(make(4, variant="numeric"))
 ### Right-Angled Triangles
 #### Classic Triangle
 ```python
-from patlab.right_triangle import classic
+from patlab import classic
 
 print(classic(4))
 ```
