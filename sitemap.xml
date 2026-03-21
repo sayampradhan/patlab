@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://sayampradhan.github.io/patlab/docs/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://sayampradhan.github.io/patlab/docs/api/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://sayampradhan.github.io/patlab/docs/getting-started/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://sayampradhan.github.io/patlab/docs/patterns/pyramid/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://sayampradhan.github.io/patlab/docs/patterns/square/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://sayampradhan.github.io/patlab/docs/patterns/triangle/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+</urlset>
