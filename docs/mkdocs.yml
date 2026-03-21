@@ -11,7 +11,7 @@ theme:
   logo: 'assets/logo.png'
 
   font:
-    text: Gentium Book Plus
+    text: Roboto Condensed
     code: JetBrains Mono
 
   features:

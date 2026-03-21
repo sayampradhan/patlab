@@ -1,4 +1,4 @@
-# Patlab
+# ![patlab-logo](assets/patlab-logo.png)
 
 > Generate beautiful text-based patterns in Python with a clean API.
 
