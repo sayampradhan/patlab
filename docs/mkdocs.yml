@@ -1,14 +1,15 @@
-site_name: Patlab
+site_name: patlab
 site_description: Generate text-based patterns easily in Python
 site_url: https://sayampradhan.github.io/patlab/
 
 repo_url: https://github.com/sayampradhan/patlab/
-repo_name: Patlab
+repo_name: patlab
 
 theme:
   name: material
-  logo: assets/logo_resized.png
-  favicon: assets/favicon.ico
+  favicon: 'assets/favicon.png'
+  logo:
+    icon: None
 
   font:
     text: Inter
