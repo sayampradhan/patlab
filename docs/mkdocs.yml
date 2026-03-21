@@ -11,7 +11,7 @@ theme:
   logo: 'assets/logo.png'
 
   font:
-    text: Google Sans
+    text: Gentium Book Plus
     code: JetBrains Mono
 
   features:
