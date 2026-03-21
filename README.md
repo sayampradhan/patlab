@@ -1,4 +1,4 @@
-# ![patlab-logo](docs/images/patlab-logo.png)
+# ![patlab-logo](docs/assets/patlab-logo.png)
 
 [![PyPI version](https://img.shields.io/pypi/v/patlab.svg)](https://pypi.org/project/patlab/)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
