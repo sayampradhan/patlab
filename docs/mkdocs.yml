@@ -11,7 +11,7 @@ theme:
   logo: 'assets/logo.png'
 
   font:
-    text: Inter
+    text: Google Sans
     code: JetBrains Mono
 
   features:
