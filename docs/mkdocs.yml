@@ -6,8 +6,8 @@ repo_name: Patlab
 
 theme:
   name: material
-  favicon: images/favicon.ico
-  logo: images/logo.svg
+  favicon: https://raw.githubusercontent.com/sayampradhan/patlab/refs/heads/main/docs/images/favicon.ico
+  logo: https://github.com/sayampradhan/patlab/blob/fb083c8bd4e42f2c328e7d78b5dea50ef946872b/docs/images/logo.svg
 
   features:
     - navigation.tabs
