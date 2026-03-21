@@ -1,0 +1,52 @@
+site_name: Patlab
+site_description: Generate text-based patterns easily in Python
+site_url: https://sayampradhan.github.io/patlab/docs/
+repo_url: https://github.com/sayampradhan/patlab
+repo_name: Patlab
+
+theme:
+  name: material
+  favicon: ./images/favicon.ico
+  logo: ./images/logo.svg
+
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
+    - search.highlight
+    - search.suggest
+
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Patterns:
+      - Square: patterns/square.md
+      - Pyramid: patterns/pyramid.md
+      - Right Triangle: patterns/triangle.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sayampradhan/patlab
+
+    - icon: fontawesome/solid/download
+      link: https://pypi.org/project/patlab/
