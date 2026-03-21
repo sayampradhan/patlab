@@ -1,16 +1,19 @@
 site_name: Patlab
 site_description: Generate text-based patterns easily in Python
-site_url: https://sayampradhan.github.io/patlab/docs/
-repo_url: https://github.com/sayampradhan/patlab
+site_url: https://sayampradhan.github.io/patlab/
+
+repo_url: https://github.com/sayampradhan/patlab/
 repo_name: Patlab
 
 theme:
   name: material
-  favicon: /images/favicon.ico
-  logo: /images/logo_resized.png
+  logo: images/logo_resized.png
+  favicon: images/favicon.ico
+
   font:
     text: Inter
     code: JetBrains Mono
+
   features:
     - navigation.tabs
     - navigation.top
@@ -19,18 +22,16 @@ theme:
     - content.code.annotate
     - search.highlight
     - search.suggest
+
   palette:
     - scheme: default
-      primary: "#2563EB" 
-      accent: "#60A5FA" 
+      primary: "#2563EB"
+      accent: "#60A5FA"
 
     - scheme: slate
-      primary: "#2563EB" 
-      accent: "#60A5FA" 
-extra:
-  palette:
-    primary: "#2563EB"   # main blue
-    accent: "#60A5FA"    # lighter blue
+      primary: "#2563EB"
+      accent: "#60A5FA"
+
 plugins:
   - search
 
@@ -46,6 +47,10 @@ nav:
       - Right Triangle: patterns/triangle.md
 
 extra:
+  palette:
+    primary: "#2563EB"
+    accent: "#60A5FA"
+
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/sayampradhan/patlab
