@@ -6,8 +6,11 @@ repo_name: Patlab
 
 theme:
   name: material
-  favicon: https://raw.githubusercontent.com/sayampradhan/patlab/refs/heads/main/docs/images/favicon.ico
-  logo: https://raw.githubusercontent.com/sayampradhan/patlab/refs/heads/main/docs/images/favicon.ico
+  favicon: /images/favicon.ico
+  logo: /images/logo_resized.png
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.tabs
     - navigation.top
@@ -16,18 +19,18 @@ theme:
     - content.code.annotate
     - search.highlight
     - search.suggest
-
   palette:
     - scheme: default
-      primary: blue
-      accent: indigo
-    - scheme: slate
-      primary: blue
-      accent: indigo
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
+      primary: "#2563EB" 
+      accent: "#60A5FA" 
 
+    - scheme: slate
+      primary: "#2563EB" 
+      accent: "#60A5FA" 
+extra:
+  palette:
+    primary: "#2563EB"   # main blue
+    accent: "#60A5FA"    # lighter blue
 plugins:
   - search
 
