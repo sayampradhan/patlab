@@ -8,8 +8,7 @@ repo_name: patlab
 theme:
   name: material
   favicon: 'assets/favicon.png'
-  logo:
-    icon: None
+  logo: 'assets/logo.png'
 
   font:
     text: Inter
