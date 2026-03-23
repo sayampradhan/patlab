@@ -32,18 +32,18 @@ def square(
 
     Examples:
     ---------
-    >>> print(square(3))
+    >>> print(square(3, space=True))
     * * *
     * * *
     * * *
 
-    >>> print(square(4, "#"))
+    >>> print(square(4, "#", space=True))
     # # # #
     # # # #
     # # # #
     # # # #
 
-    >>> print(square(5, numeric=True))
+    >>> print(square(5, numeric=True, space=True))
     1 1 1 1 1
     2 2 2 2 2 
     3 3 3 3 3
