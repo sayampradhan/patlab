@@ -4,6 +4,7 @@ def square(
         n: int, 
         char: str="*",
         numeric: bool=False,
+        increment: bool=False,
         space: bool=False
 ) -> str:
     """
@@ -19,6 +20,10 @@ def square(
     numeric : bool, optional
         If True, generates a numeric square instead of using the specified character.
         Each row will contain the row number repeated `n` times. Default is False.
+    increment : bool, optional
+        If True and `numeric` is True, each row will contain incrementing numbers from 1 to `n` instead of the row number. Default is False.
+    space : bool, optional
+        If True, adds spaces between characters or numbers for better readability. Default is False
 
     Returns:
     --------
@@ -29,6 +34,12 @@ def square(
     -------
     ValueError
         If `n` is not a positive integer.
+    ValueError
+        If `char` is not a single character.
+    ValueError
+        If `char` is specified while `numeric` is True.
+    ValueError
+        If `increment` is True while `numeric` is False.
 
     Examples:
     ---------
@@ -52,13 +63,32 @@ def square(
     """
     if n <= 0:
         raise ValueError("n must be positive")
-    if space:
+    
+    if len(char) != 1:
+        raise ValueError("char must be a single character")
+    
+    if numeric and char != "*":
+        raise ValueError("Cannot specify 'char' when numeric=True")
+    
+    if increment and not numeric:
+        raise ValueError("increment can only be True when numeric=True")
+
+    lines = []
+
+    for i in range(1, n + 1):
         if numeric:
-                return "\n".join([(str(i) + " ") * n for i in range(1, n + 1)])
+            if increment:
+                row = [str(j) for j in range(1, n + 1)]
+            else:
+                row = [str(i)] * n
         else:
-                return "\n".join([(char + " ") * n for _ in range(n)])
-    else:
-        if numeric:
-            return "\n".join([str(i) * n for i in range(1, n + 1)])
+            row = [char] * n
+
+        if space:
+            content = " ".join(row)
         else:
-            return "\n".join([char * n for _ in range(n)])
+            content = "".join(row)
+
+        lines.append(content)
+
+    return "\n".join(lines)
