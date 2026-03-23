@@ -117,4 +117,5 @@ def numeric_pyramid(
         inversion=inversion,
         hollow=hollow,
         numeric=True,
+        palindrome=palindrome,
     )
