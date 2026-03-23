@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: patlab
-Version: 0.1.16
+Version: 0.1.17
 Summary: Simple pattern generation library for Python
 Author-email: Sayam <sayampradhan07@outlook.com>
 License-Expression: MIT
@@ -19,7 +19,7 @@ Dynamic: license-file
 
 # patlab
 
-# ![patlab-logo](https://raw.githubusercontent.com/sayampradhan/patlab/main/docs/images/patlab-logo.png)
+# ![patlab-logo](https://github.com/sayampradhan/patlab/blob/3d9f516d51495760476e5f44089595e9daa7eb52/docs/docs/assets/patlab-logo.png)
 <!-- 
 [![PyPI version](https://img.shields.io/pypi/v/patlab.svg)](https://pypi.org/project/patlab/)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
