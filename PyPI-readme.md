@@ -1,6 +1,6 @@
 # patlab
 
-# ![patlab-logo](https://github.com/sayampradhan/patlab/blob/3d9f516d51495760476e5f44089595e9daa7eb52/docs/docs/assets/patlab-logo.png)
+# ![patlab-logo](https://raw.githubusercontent.com/sayampradhan/patlab/3d9f516d51495760476e5f44089595e9daa7eb52/docs/docs/assets/patlab-logo.png)
 <!-- 
 [![PyPI version](https://img.shields.io/pypi/v/patlab.svg)](https://pypi.org/project/patlab/)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
