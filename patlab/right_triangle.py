@@ -88,6 +88,9 @@ def right_triangle(
 
     if numeric and char != "*":
         raise ValueError("Cannot specify 'char' when numeric=True")
+    
+    if hollow and n <= 3:
+        print("Warning: Value should be greater than 3 to create hollow right triangle")
 
     lines = []
 
@@ -125,5 +128,4 @@ def right_triangle(
             raise ValueError("Invalid alignment")
 
         lines.append(line)
-
     return "\n".join(lines)
