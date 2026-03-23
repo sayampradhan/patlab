@@ -64,7 +64,7 @@ def pyramid(
                     content = left + left[-2::-1] if alignment == "center" else left
                 else:
                     if alignment == "center":
-                        content = "1" + " " * (2 * i - 3) + str(i)
+                        content = "1" + " " * (2 * i - 3) + str(1)
                     else:
                         content = "1" + " " * (i - 2) + str(i)
 
