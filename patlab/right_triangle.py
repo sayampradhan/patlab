@@ -12,6 +12,7 @@ def right_triangle(
     inversion: bool = False,
     hollow: bool = False,
     numeric: bool = False,
+    space:bool = False
 ) -> str:
     """
     Generate a right-angled triangle with configurable style.
@@ -101,24 +102,43 @@ def right_triangle(
     for i in levels:
         if numeric:
             if not hollow:
-                content = "".join(str(x) for x in range(1, i + 1))
+                if space:
+                    content = " ".join(str(x) for x in range(1, i + 1))
+                else:
+                    content = "".join(str(x) for x in range(1, i + 1))
             else:
                 if i == 1:
                     content = "1"
                 elif i == n:
-                    content = "".join(str(x) for x in range(1, n + 1))
+                    if space:
+                        content = " ".join(str(x) for x in range(1, n + 1))
+                    else:
+                        content = "".join(str(x) for x in range(1, n + 1))
                 else:
-                    content = "1" + " " * (i - 2) + str(i)
+                    if space:
+                        content = "1" + " " * (2 * (i - 2) + 1) + str(i)
+                    else:
+                        content = "1" + " " * (i - 2) + str(i)
+
         else:
             if not hollow:
-                content = char * i
+                if space:
+                    content = " ".join([char] * i)
+                else:
+                    content = char * i
             else:
                 if i == 1:
                     content = char
                 elif i == n:
-                    content = char * n
+                    if space:
+                        content = " ".join([char] * n)
+                    else:
+                        content = char * n
                 else:
-                    content = char + " " * (i - 2) + char
+                    if space:
+                        content = char + " " * (2 * (i - 2) + 1) + char
+                    else:
+                        content = char + " " * (i - 2) + char
 
         if alignment == "left":
             line = content.ljust(n)
