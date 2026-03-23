@@ -10,7 +10,7 @@ def pyramid(
     inversion: bool = False,
     hollow: bool = False,
     numeric: bool = False,
-    palindrome: bool = True,
+    palindrome: bool = False,
 ) -> str:
     """
     Generate a pyramid with configurable style.
@@ -29,6 +29,9 @@ def pyramid(
         If True, pyramid is hollow.
     numeric : bool
         If True, uses numbers instead of characters.
+    palindrome : bool
+        If True, creates a palindrome pyramid.
+
 
     Returns
     -------
@@ -106,7 +109,7 @@ def numeric_pyramid(
     alignment: Alignment = "center",
     inversion: bool = False,
     hollow: bool = False,
-    palindrome: bool = True,
+    palindrome: bool = False,
 ) -> str:
     """
     Convenience wrapper for numeric pyramids.
