@@ -42,6 +42,9 @@ def right_triangle(
         If True, uses numbers instead of characters.
         Each row increases sequentially (e.g., 1, 12, 123).
         Default is False.
+    space : bool, optional
+        If True, adds spaces between characters or numbers for better readability.
+        Default is False.
 
     Returns
     -------
