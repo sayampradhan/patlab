@@ -69,18 +69,19 @@ def pyramid(
             else:
                 # ---------------- NON-PALINDROME ----------------
                 if not hollow:
-                    content = left  # 123
+                    content = left
 
                 else:
                     if i == 1:
                         content = "1"
 
                     elif i == n:
-                        content = left
+                        # full row: 123456789
+                        content = "".join(str(x) for x in range(1, 2 * n))
 
                     else:
-                        # consistent pyramid spacing
-                        content = "1" + " " * (2 * i - 3) + str(i)
+                        # key fix here
+                        content = "1" + " " * (2 * i - 3) + str(2 * i - 1)
 
             # --- ALIGNMENT ---
         if alignment == "center":
