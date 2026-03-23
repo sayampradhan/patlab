@@ -46,15 +46,27 @@ def pyramid(
     for i in levels:
         # --- CONTENT ---
         if numeric:
-            # Build numeric pattern
-            left = "".join(str(x) for x in range(1, i + 1))
+            if not hollow:
+                # Build numeric pattern
+                left = "".join(str(x) for x in range(1, i + 1))
 
-            if alignment == "center":
-                # Palindromic pyramid: 12321
-                content = left + left[-2::-1]
+                if alignment == "center":
+                    # Palindromic pyramid: 12321
+                    content = left + left[-2::-1]
+                else:
+                    # Simple numeric: 123
+                    content = left
             else:
-                # Simple numeric: 123
-                content = left
+                if i == 1:
+                    content = "1"
+                elif i == n:
+                    left = "".join(str(x) for x in range(1, i + 1))
+                    content = left + left[-2::-1] if alignment == "center" else left
+                else:
+                    if alignment == "center":
+                        content = "1" + " " * (2 * i - 3) + str(i)
+                    else:
+                        content = "1" + " " * (i - 2) + str(i)
 
         else:
             if not hollow:
