@@ -91,11 +91,7 @@ def right_triangle(
         raise ValueError("Cannot specify 'char' when numeric=True")
     
     if hollow and n <= 3:
-        warnings.warn(
-            "Value should be greater than 3 to create hollow right triangle",
-            UserWarning
-        )
-
+        print("\033[93mWarning: Value should be greater than 3 to create hollow right triangle\033[0m\n")
     lines = []
 
     levels = range(1, n + 1)
