@@ -1,4 +1,5 @@
 from typing import Literal
+import warnings
 
 Alignment = Literal["left", "right"]
 Variant = Literal["classic", "inverted"]
@@ -88,7 +89,9 @@ def right_triangle(
 
     if numeric and char != "*":
         raise ValueError("Cannot specify 'char' when numeric=True")
-
+    
+    if hollow and n <= 3:
+        print("\033[93mWarning: Value should be greater than 3 to create hollow right triangle\033[0m\n")
     lines = []
 
     levels = range(1, n + 1)
@@ -125,5 +128,4 @@ def right_triangle(
             raise ValueError("Invalid alignment")
 
         lines.append(line)
-
     return "\n".join(lines)
