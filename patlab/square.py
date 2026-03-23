@@ -20,6 +20,10 @@ def square(
     numeric : bool, optional
         If True, generates a numeric square instead of using the specified character.
         Each row will contain the row number repeated `n` times. Default is False.
+    increment : bool, optional
+        If True and `numeric` is True, each row will contain incrementing numbers from 1 to `n` instead of the row number. Default is False.
+    space : bool, optional
+        If True, adds spaces between characters or numbers for better readability. Default is False
 
     Returns:
     --------
@@ -30,6 +34,12 @@ def square(
     -------
     ValueError
         If `n` is not a positive integer.
+    ValueError
+        If `char` is not a single character.
+    ValueError
+        If `char` is specified while `numeric` is True.
+    ValueError
+        If `increment` is True while `numeric` is False.
 
     Examples:
     ---------
