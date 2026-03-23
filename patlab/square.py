@@ -3,7 +3,8 @@ from typing import Literal
 def square(
         n: int, 
         char: str="*",
-        numeric: bool=False
+        numeric: bool=False,
+        space: bool=False
 ) -> str:
     """
     Generate a square pattern of size `n` using the specified character.
@@ -32,15 +33,15 @@ def square(
     Examples:
     ---------
     >>> print(square(3))
-    ***
-    ***
-    ***
+    * * *
+    * * *
+    * * *
 
     >>> print(square(4, "#"))
-    ####
-    ####
-    ####
-    ####
+    # # # #
+    # # # #
+    # # # #
+    # # # #
 
     >>> print(square(5, numeric=True))
     1 1 1 1 1
@@ -51,7 +52,13 @@ def square(
     """
     if n <= 0:
         raise ValueError("n must be positive")
-    if numeric:
-        return "\n".join([(str(i) + " ") * n for i in range(1, n + 1)])
-    else:    
-        return "\n".join([(char + " ") * n for _ in range(n)])
+    if space:
+        if numeric:
+                return "\n".join([(str(i) + " ") * n for i in range(1, n + 1)])
+        else:
+                return "\n".join([(char + " ") * n for _ in range(n)])
+    else:
+        if numeric:
+            return "\n".join([str(i) * n for i in range(1, n + 1)])
+        else:
+            return "\n".join([char * n for _ in range(n)])
