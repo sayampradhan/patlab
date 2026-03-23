@@ -72,7 +72,10 @@ def pyramid(
             else:
                 # ---------------- NON-PALINDROME ----------------
                 if not hollow:
-                    content = left
+                    if alignment == "center":
+                        content = "".join(str(x) for x in range(1, 2 * i))
+                    else:
+                        content = left
 
                 else:
                     if i == 1:
