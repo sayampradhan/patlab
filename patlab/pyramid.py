@@ -10,6 +10,7 @@ def pyramid(
     inversion: bool = False,
     hollow: bool = False,
     numeric: bool = False,
+    palindrome: bool = True,
 ) -> str:
     """
     Generate a pyramid with configurable style.
@@ -44,48 +45,44 @@ def pyramid(
         levels = reversed(list(levels))
 
     for i in levels:
-        # --- CONTENT ---
+    # --- CONTENT ---
         if numeric:
-            if not hollow:
-                # Build numeric pattern
-                left = "".join(str(x) for x in range(1, i + 1))
+            left = "".join(str(x) for x in range(1, i + 1))
 
-                if alignment == "center":
-                    # Palindromic pyramid: 12321
+            if palindrome:
+                if not hollow:
                     content = left + left[-2::-1]
-                else:
-                    # Simple numeric: 123
-                    content = left
-            else:
-                if i == 1:
-                    content = "1"
-                elif i == n:
-                    left = "".join(str(x) for x in range(1, i + 1))
-                    content = left + left[-2::-1] if alignment == "center" else left
-                else:
-                    if alignment == "center":
-                        content = "1" + " " * (2 * i - 3) + str(1)
-                    else:
-                        content = "1" + " " * (i - 2) + str(i)
 
-        else:
-            if not hollow:
-                if alignment == "center":
-                    content = char * (2 * i - 1)
                 else:
-                    content = char * i
-            else:
-                if i == 1:
-                    content = char
-                elif i == n:
-                    content = char * (2 * i - 1) if alignment == "center" else char * i
-                else:
-                    if alignment == "center":
-                        content = char + " " * (2 * i - 3) + char
-                    else:
-                        content = char + " " * (i - 2) + char
+                    if i == 1:
+                        content = "1"
 
-        # --- ALIGNMENT ---
+                    elif i == n:
+                        content = left + left[-2::-1]
+
+                    else:
+                        # same logic for ALL middle rows
+                        if alignment == "center":
+                            content = "1" + " " * (2 * i - 3) + "1"
+                        else:
+                            content = "1" + " " * (2 * i - 3) + "1"
+            else:
+                # ---------------- NON-PALINDROME ----------------
+                if not hollow:
+                    content = left  # 123
+
+                else:
+                    if i == 1:
+                        content = "1"
+
+                    elif i == n:
+                        content = left
+
+                    else:
+                        # consistent pyramid spacing
+                        content = "1" + " " * (2 * i - 3) + str(i)
+
+            # --- ALIGNMENT ---
         if alignment == "center":
             width = 2 * n - 1
             line = content.center(width)
@@ -108,6 +105,7 @@ def numeric_pyramid(
     alignment: Alignment = "center",
     inversion: bool = False,
     hollow: bool = False,
+    palindrome: bool = True,
 ) -> str:
     """
     Convenience wrapper for numeric pyramids.
