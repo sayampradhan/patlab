@@ -2,7 +2,8 @@ from typing import Literal
 
 def square(
         n: int, 
-        char: str="*"
+        char: str="*",
+        numeric: bool=False
 ) -> str:
     """
     Generate a square pattern of size `n` using the specified character.
@@ -14,6 +15,9 @@ def square(
     char : str, optional
         The character to use for building the square. Default is '*'.
         Should be a single character.
+    numeric : bool, optional
+        If True, generates a numeric square instead of using the specified character.
+        Each row will contain the row number repeated `n` times. Default is False.
 
     Returns:
     --------
@@ -37,7 +41,17 @@ def square(
     ####
     ####
     ####
+
+    >>> print(square(5, numeric=True))
+    11111
+    22222
+    33333
+    44444
+    55555
     """
     if n <= 0:
         raise ValueError("n must be positive")
-    return "\n".join([char * n for _ in range(n)])
+    if numeric:
+        return "\n".join([str(i) * n for i in range(1, n + 1)])
+    else:    
+        return "\n".join([char * n for _ in range(n)])
