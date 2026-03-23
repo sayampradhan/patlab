@@ -43,15 +43,15 @@ def square(
     ####
 
     >>> print(square(5, numeric=True))
-    11111
-    22222
-    33333
-    44444
-    55555
+    1 1 1 1 1
+    2 2 2 2 2 
+    3 3 3 3 3
+    4 4 4 4 4
+    5 5 5 5 5
     """
     if n <= 0:
         raise ValueError("n must be positive")
     if numeric:
-        return "\n".join([str(i) * n for i in range(1, n + 1)])
+        return "\n".join([(str(i) + " ") * n for i in range(1, n + 1)])
     else:    
-        return "\n".join([char * n for _ in range(n)])
+        return "\n".join([(char + " ") * n for _ in range(n)])
