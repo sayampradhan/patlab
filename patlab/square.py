@@ -4,6 +4,7 @@ def square(
         n: int, 
         char: str="*",
         numeric: bool=False,
+        increment: bool=False,
         space: bool=False
 ) -> str:
     """
@@ -52,13 +53,32 @@ def square(
     """
     if n <= 0:
         raise ValueError("n must be positive")
-    if space:
+    
+    if len(char) != 1:
+        raise ValueError("char must be a single character")
+    
+    if numeric and char != "*":
+        raise ValueError("Cannot specify 'char' when numeric=True")
+    
+    if increment and not numeric:
+        raise ValueError("increment can only be True when numeric=True")
+
+    lines = []
+
+    for i in range(1, n + 1):
         if numeric:
-                return "\n".join([(str(i) + " ") * n for i in range(1, n + 1)])
+            if increment:
+                row = [str(j) for j in range(1, n + 1)]
+            else:
+                row = [str(i)] * n
         else:
-                return "\n".join([(char + " ") * n for _ in range(n)])
-    else:
-        if numeric:
-            return "\n".join([str(i) * n for i in range(1, n + 1)])
+            row = [char] * n
+
+        if space:
+            content = " ".join(row)
         else:
-            return "\n".join([char * n for _ in range(n)])
+            content = "".join(row)
+
+        lines.append(content)
+
+    return "\n".join(lines)
