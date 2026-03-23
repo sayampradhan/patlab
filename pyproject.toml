@@ -1,6 +1,6 @@
 [project]
 name = "patlab"
-version = "0.1.30"
+version = "0.1.31"
 description = "Simple pattern generation library for Python"
 authors = [{ name = "Sayam", email = "sayampradhan07@outlook.com" }]
 readme = "PyPI-readme.md"
