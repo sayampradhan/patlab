@@ -1,4 +1,4 @@
-# Square
+# square()
 
 The function `square()` can be used to generate square patterns using characters or numbers
 ---
