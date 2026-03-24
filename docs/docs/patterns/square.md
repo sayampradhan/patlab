@@ -2,6 +2,7 @@
 
 The function `square()` can be used to generate square patterns using characters or numbers
 ---
+
 ## Function Signature
 ```python
 square(
@@ -17,6 +18,7 @@ square(
 - Numeric patterns
 - Incremental sequences
 - Optional spacing for readabiility
+
 ---
 
 ## Parameter
@@ -27,7 +29,6 @@ square(
 | `numeric`   | bool | `False` | If `True`, generates numeric patterns instead of characters.                           |
 | `increment` | bool | `False` | If `True`, rows contain `1 → n` instead of repeating numbers. Requires `numeric=True`. |
 | `space`     | bool | `False` | Adds spaces between elements for better readability.                                   |
----
 
 ## Returns
 - str — A string representing the square pattern with newline-separated rows
