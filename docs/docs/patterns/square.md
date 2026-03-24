@@ -51,9 +51,9 @@ Repeats the given character across all rows.
 * * * * *
 ```
 
-#### Usage
+#### Usage Examples
 
-##### Default Square
+##### 1. Default Square
 ```python
 print(square(3))
 ```
@@ -63,7 +63,7 @@ print(square(3))
 ***
 ```
 
-#### Default Square (with spaces)
+##### 2. Default Square (with spaces)
 ```python
 print(square(3, space=True))
 ```
@@ -73,45 +73,6 @@ print(square(3, space=True))
 * * *
 ```
 
-#### Custom character
-```python
-print(square(4, "#"))
-```
-```
-####
-####
-####
-####
-```
-```python
-print(square(3, "1"))
-```
-```
-111
-111
-111
-```
-
-#### Custom character (with spaces)
-```python
-print(square(4,"#",space=True))
-```
-```
-# # # #
-# # # #
-# # # #
-# # # #
-```
-```python
-print(square(3, "1", space=True))
-```
-```
-1 1 1
-1 1 1
-1 1 1
-```
-
-
 ### Numeric Mode
 - Each row uses its row number:
 ```
@@ -120,9 +81,9 @@ print(square(3, "1", space=True))
 3 3 3
 ```
 
-#### Usage
+#### Usage Examples
 
-##### Simple Numeric Pattern
+##### 1. Simple Numeric Pattern
 ```python
 from patlab import square
 
@@ -135,7 +96,7 @@ print(square(4, numeric=True))
 4444
 ```
 
-#### Simple Numeric Pattern (with spaces)
+##### 2. Simple Numeric Pattern (with spaces)
 ```python
 from patlab import square
 
@@ -148,7 +109,7 @@ print(square(4, numeric=True, space=True))
 4 4 4 4
 ```
 
-#### Simple Incremental Numeric Pattern
+##### 3. Simple Incremental Numeric Pattern
 ```python
 from patlab import square
 
@@ -161,7 +122,7 @@ print(square(4, numeric=True, incremental=True))
 1234
 ```
 
-#### Simple Incremental Numeric Pattern (with spaces)
+##### 4. Simple Incremental Numeric Pattern (with spaces)
 ```python
 from patlab import square
 
@@ -172,6 +133,48 @@ print(square(4, numeric=True, incremental=True, spaces=True))
 1 2 3 4
 1 2 3 4
 1 2 3 4
+```
+
+### Custom Character Mode
+Repeats the given custom character across all rows.
+
+#### Usage Examples
+```python
+print(square(4, "#"))
+```
+```
+####
+####
+####
+####
+```
+
+```python
+print(square(3, "1"))
+```
+```
+111
+111
+111
+```
+
+```python
+print(square(4,"#",space=True))
+```
+```
+# # # #
+# # # #
+# # # #
+# # # #
+```
+
+```python
+print(square(3, "1", space=True))
+```
+```
+1 1 1
+1 1 1
+1 1 1
 ```
 
 ## Notes
