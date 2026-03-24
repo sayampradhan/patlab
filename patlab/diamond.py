@@ -5,7 +5,6 @@ def diamond(
     char: str = "*",
     hollow: bool = False,
     numeric: bool = False,
-    space: bool = False,
 ) -> str:
     """
     Generate a diamond pattern of size `n` using the specified character.
@@ -79,7 +78,7 @@ def diamond(
         else:
             elems = [val] * count
 
-        sep = " " if space else ""
+        sep = ""
         return pad + sep.join(elems)
 
     lines = []
