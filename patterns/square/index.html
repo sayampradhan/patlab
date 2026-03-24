@@ -536,17 +536,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-str-a-string-representing-the-square-pattern-with-newline-separated-rows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        - str — A string representing the square pattern with newline-separated rows
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#raises" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -895,17 +884,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-str-a-string-representing-the-square-pattern-with-newline-separated-rows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        - str — A string representing the square pattern with newline-separated rows
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#raises" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1136,7 +1114,7 @@
 <h2 id="function-signature">Function Signature</h2>
 <pre><code class="language-python">square(
     n: int,
-    char: str = &quot;*&quot;
+    char: str = &quot;*&quot;,
     numeric: bool = False,
     increment: bool = False,
     space: bool = False
@@ -1147,7 +1125,6 @@
 - Numeric patterns
 - Incremental sequences
 - Optional spacing for readabiility</p>
-<hr />
 <h2 id="parameter">Parameter</h2>
 <table>
 <thead>
@@ -1192,7 +1169,9 @@
 </tbody>
 </table>
 <h2 id="returns">Returns</h2>
-<h2 id="-str-a-string-representing-the-square-pattern-with-newline-separated-rows">- str — A string representing the square pattern with newline-separated rows</h2>
+<ul>
+<li>str — A string representing the square pattern with newline-separated rows</li>
+</ul>
 <h2 id="raises">Raises</h2>
 <table>
 <thead>
@@ -1217,10 +1196,6 @@
 <tr>
 <td><code>ValueError</code></td>
 <td>If <code>increment=True</code> but <code>numeric=False</code></td>
-</tr>
-<tr>
-<td>---</td>
-<td></td>
 </tr>
 </tbody>
 </table>
