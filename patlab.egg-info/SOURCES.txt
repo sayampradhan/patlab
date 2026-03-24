@@ -3,6 +3,7 @@ PyPI-readme.md
 README.md
 pyproject.toml
 patlab/__init__.py
+patlab/diamond.py
 patlab/pyramid.py
 patlab/right_triangle.py
 patlab/square.py
