@@ -1,6 +1,6 @@
 # pyramid()
 
-Generate highly customizable text-based pyramid patterns.
+The function `pyramid()` can be used to generate highly customizable text-based pyramid patterns.
 
 ## Function Signature
 ```python
