@@ -69,29 +69,23 @@ def diamond(
         raise ValueError("char must be a single character.")
 
     def make_line(i: int) -> str:
-        width = 2 * i + 1
+        count = 2 * i + 1
         pad = " " * (n - i - 1)
-
         val = str(i + 1) if numeric else char
 
-        if hollow and width > 1:
-            middle = " " * (width - 2)
-            core = val + middle + val
+        if hollow and count > 1:
+            middle = [" "] * (count - 2)
+            elems = [val] + middle + [val]
         else:
-            core = val * width
+            elems = [val] * count
 
-        if space:
-            core = " ".join(core)
-
-        return pad + core
+        sep = " " if space else ""
+        return pad + sep.join(elems)
 
     lines = []
 
-    # top
     for i in range(n):
         lines.append(make_line(i))
-
-    # bottom
     for i in range(n - 2, -1, -1):
         lines.append(make_line(i))
 
