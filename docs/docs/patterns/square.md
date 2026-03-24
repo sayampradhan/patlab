@@ -63,7 +63,7 @@ print(square(3))
 ***
 ```
 
-#### Default Square (with spaces)
+##### Default Square (with spaces)
 ```python
 print(square(3, space=True))
 ```
@@ -73,7 +73,7 @@ print(square(3, space=True))
 * * *
 ```
 
-#### Custom character
+##### Custom character
 ```python
 print(square(4, "#"))
 ```
@@ -92,7 +92,7 @@ print(square(3, "1"))
 111
 ```
 
-#### Custom character (with spaces)
+##### Custom character (with spaces)
 ```python
 print(square(4,"#",space=True))
 ```
@@ -135,7 +135,7 @@ print(square(4, numeric=True))
 4444
 ```
 
-#### Simple Numeric Pattern (with spaces)
+##### Simple Numeric Pattern (with spaces)
 ```python
 from patlab import square
 
@@ -148,7 +148,7 @@ print(square(4, numeric=True, space=True))
 4 4 4 4
 ```
 
-#### Simple Incremental Numeric Pattern
+##### Simple Incremental Numeric Pattern
 ```python
 from patlab import square
 
@@ -161,7 +161,7 @@ print(square(4, numeric=True, incremental=True))
 1234
 ```
 
-#### Simple Incremental Numeric Pattern (with spaces)
+##### Simple Incremental Numeric Pattern (with spaces)
 ```python
 from patlab import square
 
