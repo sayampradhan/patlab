@@ -71,11 +71,18 @@ def diamond(
     lines = []
     for i in range(n):
         if numeric:
-            line_char = str(i + 1)
+            if not space:
+                line_char = str(i + 1)
+            else:
+                line_char = " ".join([str(i + 1)] * (2 * i + 1))
         else:
-            line_char = char
+            if not space:
+                line_char = char
+            else:
+                line_char = " ".join([char] * (2 * i + 1))
 
         spaces = " " * (n - i - 1)
+
         if hollow and i > 0 and i < n - 1:
             line = spaces + line_char + " " * (2 * i - 1) + line_char
         else:
@@ -86,9 +93,15 @@ def diamond(
     # Add the bottom half of the diamond
     for i in range(n - 2, -1, -1):
         if numeric:
-            line_char = str(i + 1)
+            if not space:
+                line_char = str(i + 1)
+            else:
+                line_char = " ".join([str(i + 1)] * (2 * i + 1))
         else:
-            line_char = char
+            if not space:
+                line_char = char
+            else:
+                line_char = " ".join([char] * (2 * i + 1))
 
         spaces = " " * (n - i - 1)
         if hollow and i > 0 and i < n - 1:
