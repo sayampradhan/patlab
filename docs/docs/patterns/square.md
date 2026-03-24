@@ -7,7 +7,7 @@ The function `square()` can be used to generate square patterns using characters
 ```python
 square(
     n: int,
-    char: str = "*"
+    char: str = "*",
     numeric: bool = False,
     increment: bool = False,
     space: bool = False
@@ -18,8 +18,6 @@ square(
 - Numeric patterns
 - Incremental sequences
 - Optional spacing for readabiility
-
----
 
 ## Parameter
 | Name        | Type | Default | Description                                                                            |
@@ -32,7 +30,6 @@ square(
 
 ## Returns
 - str — A string representing the square pattern with newline-separated rows
----
 
 ## Raises
 | Exception    | Condition                                |
@@ -41,9 +38,9 @@ square(
 | `ValueError` | If `char` is not a single character      |
 | `ValueError` | If `numeric=True` and `char` is provided |
 | `ValueError` | If `increment=True` but `numeric=False`  |
----
 
 ## Basic Usage
+
 ### Charater Mode (default)
 Repeats the given character across all rows.
 ```
@@ -55,6 +52,7 @@ Repeats the given character across all rows.
 ```
 
 #### Usage
+
 ##### Default Square
 ```python
 print(square(3))
@@ -123,6 +121,7 @@ print(square(3, "1", space=True))
 ```
 
 #### Usage
+
 ##### Simple Numeric Pattern
 ```python
 from patlab import square
