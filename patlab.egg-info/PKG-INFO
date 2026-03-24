@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: patlab
-Version: 0.2.6
+Version: 0.2.7
 Summary: Simple pattern generation library for Python
 Author-email: Sayam <sayampradhan07@outlook.com>
 License-Expression: MIT
@@ -35,11 +35,6 @@ Dynamic: license-file
 **Patlab** is a lightweight Python library for generating common text-based patterns such as squares, pyramids, and triangles with clean and customizable APIs.
 
 It’s designed for beginners, educators, and developers who want a simple way to generate patterns programmatically.
-
-🔗 **GitHub Repository:** https://github.com/sayampradhan/patlab  
-📚 **Documentation:** https://github.com/sayampradhan/patlab/tree/main/docs  
-
----
 
 ## ✨ Features
 
