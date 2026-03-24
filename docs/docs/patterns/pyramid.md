@@ -36,19 +36,6 @@ pyramid(
 | `ValueError` | If `alignment` is not one of `center`, `left`, or `right` |
 
 ## Usage
-- Character Mode (default)
-   - Builds pyramids using a repeated character.
-- Numeric Mode
-   - Uses increasing numbers per row
-   - Ignores char
-- Palindrome Mode
-   - Produces symmetric numeric sequences
-   - Example: 12321
-- Hollow Mode
-   - Only edges are drawn
-   - Interior is filled with spaces
-- Inversion
-   - Flips the pyramid vertically
 
 ### Default Pyramid
 ```
