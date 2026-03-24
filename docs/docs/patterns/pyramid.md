@@ -1,4 +1,4 @@
-# Pyramid()
+# pyramid()
 
 Generate highly customizable text-based pyramid patterns.
 
