@@ -47,6 +47,9 @@ print(centered(4))
 print(classic(4))
 ```
 
+For full documentation, see: https://sayampradhan.github.io/patlab/
+
+
 ## 🧪 Testing
 Tests are included using `pytest`.
 
@@ -66,19 +69,3 @@ If you’d like to improve patlab:
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
-
-## 💡 Inspiration
-
-Patlab is inspired by classic programming exercises used to teach loops, logic, and formatting in Python.
-
-If you've ever written code to print stars (`*`) in shapes like pyramids, triangles, or squares while learning Python, you've already experienced the core idea behind this library.
-
-Patlab builds on those foundational exercises by:
-
-- Turning repetitive pattern-printing logic into reusable functions  
-- Providing clean abstractions over nested loops  
-- Making it easier to experiment with variations (hollow, numeric, aligned patterns)  
-- Helping beginners transition from practice problems to structured code  
-
-It aims to bridge the gap between **learning concepts** and **building reusable tools**, making pattern generation both educational and practical.
-

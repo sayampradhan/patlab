@@ -17,11 +17,6 @@
 
 It’s designed for beginners, educators, and developers who want a simple way to generate patterns programmatically.
 
-🔗 **GitHub Repository:** https://github.com/sayampradhan/patlab  
-📚 **Documentation:** https://github.com/sayampradhan/patlab/tree/main/docs  
-
----
-
 ## ✨ Features
 
 - Generate common patterns easily:
@@ -72,111 +67,7 @@ print(sq(4, "#"))
 ####
 ```
 
-### Pyramids
-#### Centered Pyramids
-```python
-from patlab import pyramid as py
-
-print(py(4))
-```
-```
-   *
-  ***
- *****
-*******
-```
-
-#### Hollow Pyramid
-```python
-from patlab import pyramid as py
-
-print(py(4, hollow=True))
-```
-```
-   *
-  * *
- *   *
-*******
-```
-
-#### Left-Aligned Pyramid
-```python
-from patlab import pyramid as py
-
-print(py(4, alignment="left"))
-```
-```
-*
-**
-***
-****
-```
-
-#### Numeric Pyramid
-```python
-from patlab.pyramid import numeric_pyramid as npy
-
-print(npy(4))
-```
-```
-1
-12
-123
-1234
-```
-
-### Right-Angled Triangles
-#### Classic Triangle
-```python
-from patlab import right_triangle as rt
-
-print(rt(4))
-```
-```
-*
-**
-***
-****
-```
-
-#### Hollow Triangle
-```python
-from patlab import right_triangle as rt
-
-print(rt(4, hollow=True))
-```
-```
-*
-**
-* *
-****
-```
-
-#### Numeric Triangle
-```python
-from patlab import right_triangle as rt
-
-print(rt(4, numeric=True))
-```
-```
-1
-12
-123
-1234
-```
-
-#### Inverted Triangle
-```python
-from patlab import right_triangle as rt
-
-print(rt(4, inverted=True))
-```
-```
-****
-***
-**
-*
-```
+For full documentation, see: https://sayampradhan.github.io/patlab/
 
 
 ## 📜 License
