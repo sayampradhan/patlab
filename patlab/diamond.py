@@ -65,50 +65,34 @@ def diamond(
         raise ValueError("n must be a positive integer.")
     if numeric and char != "*":
         raise ValueError("Character is ignored when numeric is True.")
-    if not numeric and (len(char) != 1):
+    if not numeric and len(char) != 1:
         raise ValueError("char must be a single character.")
 
+    def make_line(i: int) -> str:
+        width = 2 * i + 1
+        pad = " " * (n - i - 1)
+
+        val = str(i + 1) if numeric else char
+
+        if hollow and width > 1:
+            middle = " " * (width - 2)
+            core = val + middle + val
+        else:
+            core = val * width
+
+        if space:
+            core = " ".join(core)
+
+        return pad + core
+
     lines = []
+
+    # top
     for i in range(n):
-        if numeric:
-            if not space:
-                line_char = str(i + 1)
-            else:
-                line_char = " ".join([str(i + 1)] * (2 * i + 1))
-        else:
-            if not space:
-                line_char = char
-            else:
-                line_char = " ".join([char] * (2 * i + 1))
+        lines.append(make_line(i))
 
-        spaces = " " * (n - i - 1)
-
-        if hollow and i > 0 and i < n - 1:
-            line = spaces + line_char + " " * (2 * i - 1) + line_char
-        else:
-            line = spaces + line_char * (2 * i + 1)
-
-        lines.append(line)
-
-    # Add the bottom half of the diamond
+    # bottom
     for i in range(n - 2, -1, -1):
-        if numeric:
-            if not space:
-                line_char = str(i + 1)
-            else:
-                line_char = " ".join([str(i + 1)] * (2 * i + 1))
-        else:
-            if not space:
-                line_char = char
-            else:
-                line_char = " ".join([char] * (2 * i + 1))
-
-        spaces = " " * (n - i - 1)
-        if hollow and i > 0 and i < n - 1:
-            line = spaces + line_char + " " * (2 * i - 1) + line_char
-        else:
-            line = spaces + line_char * (2 * i + 1)
-
-        lines.append(line)
+        lines.append(make_line(i))
 
     return "\n".join(lines)
