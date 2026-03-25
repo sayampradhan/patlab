@@ -98,6 +98,9 @@ def right_triangle(
         print("\033[93mWarning: Value should be greater than 3 to create hollow right triangle\033[0m\n")
     lines = []
 
+    if alignment == "right" and space:
+        print("\033[93mWarning: Space option may not work well with right alignment\033[0m\n")
+
     levels = range(1, n + 1)
     if inversion:
         levels = reversed(list(levels))
