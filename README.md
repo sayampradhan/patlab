@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 [![License](https://img.shields.io/github/license/sayampradhan/patlab.svg)](LICENSE)
 [![Downloads](https://img.shields.io/pypi/dm/patlab.svg)](https://pypi.org/project/patlab/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19225512.svg)](https://doi.org/10.5281/zenodo.19225512)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19225414.svg)](https://doi.org/10.5281/zenodo.19225414)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Linting: Ruff](https://img.shields.io/badge/linting-ruff-blueviolet.svg)](https://github.com/astral-sh/ruff)
 [![Issues](https://img.shields.io/github/issues/sayampradhan/patlab)](https://github.com/sayampradhan/patlab/issues)
