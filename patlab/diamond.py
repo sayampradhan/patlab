@@ -7,43 +7,45 @@ def diamond(
     numeric: bool = False,
 ) -> str:
     """
-    Generate a diamond pattern of size `n` using the specified character.
+    Generate a symmetric diamond pattern using a character or numbers.
 
-    Parameters:
-    -----------
-    n : int
-        The size of the diamond (number of rows). Must be a positive integer.
+    Parameters
+    ----------
+    height : int
+        Total number of rows in the diamond. Must be a positive **odd** integer
+        to ensure symmetry.
     char : str, optional
-        The character to use for building the diamond. Default is '*'.
-        Should be a single character.
+        The character used to build the diamond (default is '*').
+        Must be a single character. Ignored if `numeric` is True.
     hollow : bool, optional
-        If True, generates a hollow diamond (only borders are drawn). Default is False.
+        If True, generates a hollow diamond (only the border is drawn).
+        Default is False.
     numeric : bool, optional
-        If True, generates a numeric diamond instead of using the specified character.
-        Each row will contain the row number repeated as needed. Default is False.
-    space : bool, optional
-        If True, adds spaces between characters or numbers for better readability. Default is False.
+        If True, generates a numeric diamond instead of using `char`.
+        Each row contains the row number repeated. Default is False.
 
-    Returns:
-    --------
-    str
-        A string representing the diamond pattern, with each row separated by a newline.
-
-    Raises:
+    Returns
     -------
+    str
+        A string representing the diamond pattern, with rows separated by newline characters.
+
+    Raises
+    ------
     ValueError
-        If `n` is not a positive integer.
+        If `height` is not a positive integer.
     ValueError
-        If `char` is not a single character.
+        If `height` is even (diamond must be symmetric).
+    ValueError
+        If `char` is not a single character when `numeric` is False.
     ValueError
         If `char` is specified while `numeric` is True.
 
-    Examples:
-    ---------
+    Examples
+    --------
     >>> print(diamond(3))
-      *
-     ***
-      *
+     *
+    ***
+     *
 
     >>> print(diamond(5, hollow=True))
       *
@@ -52,13 +54,12 @@ def diamond(
      * *
       *
 
-    >>> print(diamond(4, numeric=True, space=True))
-       1
-      2 2
-     3 3 3
-      2 2
-       1
-
+    >>> print(diamond(5, numeric=True))
+      1
+     222
+    33333
+     222
+      1
     """
     if height <= 0:
         raise ValueError("n must be a positive integer.")
