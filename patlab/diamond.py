@@ -1,7 +1,7 @@
 from typing import Literal
 
 def diamond(
-    n: int,
+    height: int,
     char: str = "*",
     hollow: bool = False,
     numeric: bool = False,
@@ -60,17 +60,19 @@ def diamond(
        1
 
     """
-    if n <= 0:
+    if height <= 0:
         raise ValueError("n must be a positive integer.")
     if numeric and char != "*":
         raise ValueError("Character is ignored when numeric is True.")
     if not numeric and len(char) != 1:
         raise ValueError("char must be a single character.")
+    if height % 2 == 0:
+        raise ValueError("Height must be an odd number for a symmetric diamond.")
 
-    def make_line(i: int) -> str:
-        count = 2 * i + 1
-        pad = " " * (n - i - 1)
-        val = str(i + 1) if numeric else char
+    def make_line(width: int) -> str:
+        count = 2 * width + 1
+        pad = " " * (height - width - 1)
+        val = str(width + 1) if numeric else char
 
         if hollow and count > 1:
             middle = [" "] * (count - 2)
@@ -82,10 +84,12 @@ def diamond(
         return pad + sep.join(elems)
 
     lines = []
+    top = (height + 1) // 2
+    bottom = height // 2
 
-    for i in range(n):
+    for i in range(top):
         lines.append(make_line(i))
-    for i in range(n - 2, -1, -1):
+    for i in range(bottom - 1, -1, -1):
         lines.append(make_line(i))
 
     return "\n".join(lines)

@@ -1,11 +1,11 @@
 from typing import Literal
 
 def square(
-        n: int, 
-        char: str="*",
-        numeric: bool=False,
-        increment: bool=False,
-        space: bool=False
+    length: int, 
+    char: str="*",
+    numeric: bool=False,
+    increment: bool=False,
+    space: bool=False
 ) -> str:
     """
     Generate a square pattern of size `n` using the specified character.
@@ -61,7 +61,7 @@ def square(
     4 4 4 4 4
     5 5 5 5 5
     """
-    if n <= 0:
+    if length <= 0:
         raise ValueError("n must be positive")
     
     if len(char) != 1:
@@ -75,14 +75,14 @@ def square(
 
     lines = []
 
-    for i in range(1, n + 1):
+    for i in range(1, length + 1):
         if numeric:
             if increment:
-                row = [str(j) for j in range(1, n + 1)]
+                row = [str(j) for j in range(1, length + 1)]
             else:
-                row = [str(i)] * n
+                row = [str(i)] * length
         else:
-            row = [char] * n
+            row = [char] * length
 
         if space:
             content = " ".join(row)

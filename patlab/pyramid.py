@@ -4,7 +4,7 @@ Alignment = Literal["center", "left", "right"]
 Variant = Literal["centered", "left", "right", "inverted", "numeric"]
 
 def pyramid(
-    n: int,
+    height: int,
     char: str = "*",
     alignment: Alignment = "center",
     inversion: bool = False,
@@ -91,12 +91,12 @@ def pyramid(
     *   *
     *******
     """
-    if n <= 0:
+    if height <= 0:
         raise ValueError("n must be positive")
 
     lines = []
 
-    levels = range(1, n + 1)
+    levels = range(1, height + 1)
     if inversion:
         levels = reversed(list(levels))
 
@@ -113,7 +113,7 @@ def pyramid(
                     if i == 1:
                         content = "1"
 
-                    elif i == n:
+                    elif i == height:
                         content = left + left[-2::-1]
 
                     else:
@@ -134,9 +134,9 @@ def pyramid(
                     if i == 1:
                         content = "1"
 
-                    elif i == n:
+                    elif i == height:
                         # full row: 123456789
-                        content = "".join(str(x) for x in range(1, 2 * n))
+                        content = "".join(str(x) for x in range(1, 2 * height))
 
                     else:
                         # key fix here
@@ -144,13 +144,13 @@ def pyramid(
 
             # --- ALIGNMENT ---
         if alignment == "center":
-            width = 2 * n - 1
+            width = 2 * height - 1
             line = content.center(width)
         elif alignment == "left":
-            width = 2 * n - 1 if numeric else n
+            width = 2 * height - 1 if numeric else height
             line = content.ljust(width)
         elif alignment == "right":
-            width = 2 * n - 1 if numeric else n
+            width = 2 * height - 1 if numeric else height
             line = content.rjust(width)
         else:
             raise ValueError("Invalid alignment")
@@ -171,7 +171,7 @@ def numeric_pyramid(
     Convenience wrapper for numeric pyramids.
     """
     return pyramid(
-        n=n,
+        height=n,
         alignment=alignment,
         inversion=inversion,
         hollow=hollow,
