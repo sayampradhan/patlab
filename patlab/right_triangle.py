@@ -6,7 +6,7 @@ Variant = Literal["classic", "inverted"]
 
 
 def right_triangle(
-    n: int,
+    height: int,
     char: str = "*",
     alignment: Alignment = "left",
     inversion: bool = False,
@@ -88,20 +88,20 @@ def right_triangle(
     """
     if alignment not in {"left", "right"}:
         raise ValueError(f"Invalid alignment: {alignment}. Must be 'left' or 'right'.")
-    if n <= 0:
+    if height <= 0:
         raise ValueError("n must be positive")
 
     if numeric and char != "*":
         raise ValueError("Cannot specify 'char' when numeric=True")
     
-    if hollow and n <= 3:
+    if hollow and height <= 3:
         print("\033[93mWarning: Value should be greater than 3 to create hollow right triangle\033[0m\n")
     lines = []
 
     if alignment == "right" and space:
         print("\033[93mWarning: Space option may not work well with right alignment\033[0m\n")
 
-    levels = range(1, n + 1)
+    levels = range(1, height + 1)
     if inversion:
         levels = reversed(list(levels))
 
@@ -115,11 +115,11 @@ def right_triangle(
             else:
                 if i == 1:
                     content = "1"
-                elif i == n:
+                elif i == height:
                     if space:
-                        content = " ".join(str(x) for x in range(1, n + 1))
+                        content = " ".join(str(x) for x in range(1, height + 1))
                     else:
-                        content = "".join(str(x) for x in range(1, n + 1))
+                        content = "".join(str(x) for x in range(1, height + 1))
                 else:
                     if space:
                         content = "1" + " " * (2 * (i - 2) + 1) + str(i)
@@ -135,11 +135,11 @@ def right_triangle(
             else:
                 if i == 1:
                     content = char
-                elif i == n:
+                elif i == height:
                     if space:
-                        content = " ".join([char] * n)
+                        content = " ".join([char] * height)
                     else:
-                        content = char * n
+                        content = char * height
                 else:
                     if space:
                         content = char + " " * (2 * (i - 2) + 1) + char
@@ -147,9 +147,9 @@ def right_triangle(
                         content = char + " " * (i - 2) + char
 
         if alignment == "left":
-            line = content.ljust(n)
+            line = content.ljust(height)
         elif alignment == "right":
-            line = content.rjust(n)
+            line = content.rjust(height)
         else:
             raise ValueError("Invalid alignment")
 
